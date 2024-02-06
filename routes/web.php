@@ -19,14 +19,3 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 // Logout
 Route::delete('/logout', [LoginController::class, 'logout']);
-
-Route::get('/tes', function(){
-    return view('dashboard.main.index');
-});
-Route::get('/tess', function(){
-    return view('dashboard.categories.edit');
-});
-
-// Route::get('/dashboard', function(){
-//     return view('dashboard');
-// })->middleware('auth');
