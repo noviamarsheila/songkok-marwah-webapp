@@ -13,7 +13,7 @@ class CreateVisiMisisTable extends Migration
      */
     public function up()
     {
-        Schema::create('visi_misis', function (Blueprint $table) {
+        Schema::create('visi_misi', function (Blueprint $table) {
             $table->id();
             $table->string('visi');
             $table->string('misi');

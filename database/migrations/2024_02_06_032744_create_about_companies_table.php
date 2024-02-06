@@ -13,7 +13,7 @@ class CreateAboutCompaniesTable extends Migration
      */
     public function up()
     {
-        Schema::create('about_companies', function (Blueprint $table) {
+        Schema::create('about_company', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('deskripsi');

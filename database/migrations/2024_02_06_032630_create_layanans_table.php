@@ -13,7 +13,7 @@ class CreateLayanansTable extends Migration
      */
     public function up()
     {
-        Schema::create('layanans', function (Blueprint $table) {
+        Schema::create('layanan', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('deskripsi');

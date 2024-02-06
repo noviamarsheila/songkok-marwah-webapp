@@ -13,7 +13,7 @@ class CreatePilihKamisTable extends Migration
      */
     public function up()
     {
-        Schema::create('pilih_kamis', function (Blueprint $table) {
+        Schema::create('pilih_kami', function (Blueprint $table) {
             $table->id();
             $table->string('deskripsi');
             $table->timestamps();
