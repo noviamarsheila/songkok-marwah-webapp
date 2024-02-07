@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Team;
-use App\Http\Requests\StoreTeamRequest;
-use App\Http\Requests\UpdateTeamRequest;
+use App\Models\PilihKami;
+use Illuminate\Http\Request;
 
 class TeamController extends Controller
 {
@@ -31,10 +30,10 @@ class TeamController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreTeamRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTeamRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -42,10 +41,10 @@ class TeamController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Team  $team
+     * @param  \App\Models\PilihKami  $pilihKami
      * @return \Illuminate\Http\Response
      */
-    public function show(Team $team)
+    public function show(PilihKami $pilihKami)
     {
         //
     }
@@ -53,10 +52,10 @@ class TeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Team  $team
+     * @param  \App\Models\PilihKami  $pilihKami
      * @return \Illuminate\Http\Response
      */
-    public function edit(Team $team)
+    public function edit(PilihKami $pilihKami)
     {
         //
     }
@@ -64,11 +63,11 @@ class TeamController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateTeamRequest  $request
-     * @param  \App\Models\Team  $team
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\PilihKami  $pilihKami
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTeamRequest $request, Team $team)
+    public function update(Request $request, PilihKami $pilihKami)
     {
         //
     }
@@ -76,10 +75,10 @@ class TeamController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Team  $team
+     * @param  \App\Models\PilihKami  $pilihKami
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Team $team)
+    public function destroy(PilihKami $pilihKami)
     {
         //
     }

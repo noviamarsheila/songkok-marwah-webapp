@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Layanan;
-use App\Http\Requests\StoreLayananRequest;
-use App\Http\Requests\UpdateLayananRequest;
+use Illuminate\Http\Request;
 
 class LayananController extends Controller
 {
@@ -31,10 +30,10 @@ class LayananController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreLayananRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreLayananRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -64,11 +63,11 @@ class LayananController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateLayananRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Layanan  $layanan
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateLayananRequest $request, Layanan $layanan)
+    public function update(Request $request, Layanan $layanan)
     {
         //
     }

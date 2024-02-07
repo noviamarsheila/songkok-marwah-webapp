@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Http\Requests\StoreCategoryRequest;
-use App\Http\Requests\UpdateCategoryRequest;
+use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
@@ -31,10 +30,10 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCategoryRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCategoryRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -64,11 +63,11 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateCategoryRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCategoryRequest $request, Category $category)
+    public function update(Request $request, Category $category)
     {
         //
     }

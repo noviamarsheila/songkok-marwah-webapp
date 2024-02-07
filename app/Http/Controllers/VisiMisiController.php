@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\VisiMisi;
-use App\Http\Requests\StoreVisiMisiRequest;
-use App\Http\Requests\UpdateVisiMisiRequest;
+use Illuminate\Http\Request;
 
 class VisiMisiController extends Controller
 {
@@ -31,10 +30,10 @@ class VisiMisiController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreVisiMisiRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreVisiMisiRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -64,11 +63,11 @@ class VisiMisiController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateVisiMisiRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\VisiMisi  $visiMisi
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateVisiMisiRequest $request, VisiMisi $visiMisi)
+    public function update(Request $request, VisiMisi $visiMisi)
     {
         //
     }

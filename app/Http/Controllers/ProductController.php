@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Http\Requests\StoreProductRequest;
-use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -31,10 +30,10 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreProductRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProductRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -64,11 +63,11 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateProductRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProductRequest $request, Product $product)
+    public function update(Request $request, Product $product)
     {
         //
     }

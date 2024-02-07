@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Daftar Produk</h1>
     </div>
-    <a href="./tambah-produk.html" class="btn btn-primary">Tambahkan Produk Baru</a>
+    <a href="/dashboard/products/create" class="btn btn-primary">Tambahkan Produk Baru</a>
     <!-- tabel -->
     <div class="row col-md-8 mt-3 ms-2 mb-5">
         <table class="table table-striped small">

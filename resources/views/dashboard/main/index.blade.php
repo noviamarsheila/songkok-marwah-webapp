@@ -5,7 +5,7 @@
         <h1 class="h2">Dashboard</h1>
     </div>
     <div class="row align-items-start">
-        <a class="col-lg-3 box--items" href="./dashboard-produk.html">
+        <a class="col-lg-3 box--items" href="/dashboard/products">
             <div class="d-flex align-items-center justify-content-between">
                 <div>
                     <h3>Products</h3>
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </a>
-        <a class="col-lg-3 box--items" href="./dashboard-categories.html">
+        <a class="col-lg-3 box--items" href="/dashboard/categories">
             <div class="d-flex align-items-center justify-content-between">
                 <div>
                     <h3>Categories</h3>
@@ -27,7 +27,7 @@
                 </div>
             </div>
         </a>
-        <a class="col-lg-3 box--items" href="./dashboard-team.html">
+        <a class="col-lg-3 box--items" href="/dashboard/team">
             <div class="d-flex align-items-center justify-content-between">
                 <div>
                     <h3>Team</h3>
@@ -38,4 +38,4 @@
                 </div>
             </div>
         </a>
-@endsection
+    @endsection

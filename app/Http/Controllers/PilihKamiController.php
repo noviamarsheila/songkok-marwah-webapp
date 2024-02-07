@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PilihKami;
-use App\Http\Requests\StorePilihKamiRequest;
-use App\Http\Requests\UpdatePilihKamiRequest;
+use Illuminate\Http\Request;
 
 class PilihKamiController extends Controller
 {
@@ -31,10 +30,10 @@ class PilihKamiController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePilihKamiRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePilihKamiRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -64,11 +63,11 @@ class PilihKamiController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatePilihKamiRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\PilihKami  $pilihKami
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePilihKamiRequest $request, PilihKami $pilihKami)
+    public function update(Request $request, PilihKami $pilihKami)
     {
         //
     }

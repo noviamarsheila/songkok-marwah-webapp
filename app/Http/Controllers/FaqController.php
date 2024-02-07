@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
-use App\Http\Requests\StoreFaqRequest;
-use App\Http\Requests\UpdateFaqRequest;
+use Illuminate\Http\Request;
 
 class FaqController extends Controller
 {
@@ -31,10 +30,10 @@ class FaqController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreFaqRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreFaqRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -64,11 +63,11 @@ class FaqController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateFaqRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateFaqRequest $request, Faq $faq)
+    public function update(Request $request, Faq $faq)
     {
         //
     }

@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutCompany;
-use App\Http\Requests\StoreAboutCompanyRequest;
-use App\Http\Requests\UpdateAboutCompanyRequest;
+use Illuminate\Http\Request;
 
 class AboutCompanyController extends Controller
 {
@@ -31,10 +30,10 @@ class AboutCompanyController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreAboutCompanyRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAboutCompanyRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -64,11 +63,11 @@ class AboutCompanyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateAboutCompanyRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\AboutCompany  $aboutCompany
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAboutCompanyRequest $request, AboutCompany $aboutCompany)
+    public function update(Request $request, AboutCompany $aboutCompany)
     {
         //
     }
