@@ -75,6 +75,10 @@
             preslug = preslug.replace(/ /g, "-");
             slug.value = preslug.toLowerCase();
         });
+        // block fitur upload file 
+        document.addEventListener('trix-file-accept', (e) => {
+            e.preventDefault();
+        });
 
         function previewImage() {
             const image = document.querySelector("#image");

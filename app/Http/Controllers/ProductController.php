@@ -53,13 +53,13 @@ class ProductController extends Controller
             'deskripsi' => 'required|max:255',
         ]);
 
-        if ($request->file('image')) {
+        if ($request->image) {
             // ubah nama gambar, menjadi slug + . + ekstensi: songkok-mewah.png
             $imageName = $request->slug . '.' . $request->image->getClientOriginalExtension();
             // untuk menyimpan nama image kedatabase
             $validatedData['image'] = $imageName;
             // move image ke folder 'public/images/product'
-            $request->file('image')->move(public_path('images/products'), $imageName);
+            $request->image->move(public_path('images/products'), $imageName);
             // access di Front-End
             // {{ asset('images/products/' . $product->image) }}
             // atau src="/images/products/{{ $product->image }}"
@@ -90,7 +90,8 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         return view('dashboard.products.edit', [
-            'product' => $product
+            'product' => $product,
+            'categories' => Category::all()
         ]);
     }
 
@@ -103,7 +104,40 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $rules = [
+            'name' => 'required|max:255',
+            'category_id' => 'required',
+            'deskripsi' => 'required'
+        ];
+        if ($request->image) {
+            $rules['image'] = 'image|file|max:2024';
+        }
+        // jika slug tidak sama maka harus validasi dulu
+        if ($request->slug != $product->slug) {
+            $rules['slug'] = 'required|unique:products';
+        }
+
+        $validatedData = $request->validate($rules);
+
+        // jika image diperbarui
+        if ($request->image) {
+            // hapus oldImage jika ada
+            $filePath = public_path('/images/products/' . $product->image);
+            if (File::exists($filePath)) {
+                // hapus file tsb
+                File::delete($filePath);
+            }
+            // ubah nama gambar, menjadi slug + . + ekstensi: songkok-mewah.png
+            $imageName = $request->slug . '.' . $request->image->getClientOriginalExtension();
+            // untuk menyimpan nama image kedatabase
+            $validatedData['image'] = $imageName;
+            // move image ke folder 'public/images/product'
+            $request->file('image')->move(public_path('images/products'), $imageName);
+        }
+
+        Product::where('id', $product->id)
+            ->update($validatedData);
+        return redirect('/dashboard/products')->with('success', 'Post has ben updated!');
     }
 
     /**

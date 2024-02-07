@@ -33,6 +33,10 @@ Route::controller(ProductController::class)->middleware('auth')->group(function 
     Route::get('/dashboard/products/create', 'create')->name('dashboard.products.create');
     // proses add
     Route::post('/dashboard/products', 'store')->name('dashboard.products.store');
+    // edit
+    // {product:slug} penjelasan: product itu nama model, slug nama field yang cari 
+    Route::get('/dashboard/products/{product:slug}/edit', 'edit')->name('dashboard.products.edit');
+    Route::put('/dashboard/products/{product:slug}', 'update')->name('dashboard.products.update');
     //hapus
     // {product:slug} penjelasan: product itu nama model, slug nama field yang cari
     Route::delete('/dashboard/products/{product:slug}', 'destroy')->name('dashboard.products.destroy');
