@@ -14,7 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.products.index', [
+            'products' => Product::all(),
+        ]);
     }
 
     /**
@@ -57,7 +59,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('dashboard.products.edit', [
+            'product' => $product
+        ]);
     }
 
     /**

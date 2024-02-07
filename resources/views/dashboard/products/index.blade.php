@@ -17,22 +17,28 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>
-                        <a href="" class="badge bg-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <i class="bi bi-eye" style="font-size: 1rem"></i>
-                        </a>
-                        <a href="./edit-produk.html" class="badge bg-warning">
-                            <i class="bi bi-pencil-square" style="font-size: 1rem"></i>
-                        </a>
-                        <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">
-                            <i class="bi bi-trash" style="font-size: 1rem"></i>
-                        </button>
-                    </td>
-                </tr>
+                @foreach ($products as $product)
+                    <tr>
+                        <th scope="row">{{ $loop->iteration }}</th>
+                        <td>{{ $product->name }}</td>
+                        <td>{{ $product->category->name }}</td>
+                        <td>
+                            <a href="" class="badge bg-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <i class="bi bi-eye" style="font-size: 1rem"></i>
+                            </a>
+                            <a href="/dashboard/products/{{ $product->slug }}/edit" class="badge bg-warning">
+                                <i class="bi bi-pencil-square" style="font-size: 1rem"></i>
+                            </a>
+                            <form action="/dashboard/products/{{ $product->slug }}" method="POST" class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">
+                                    <i class="bi bi-trash" style="font-size: 1rem"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

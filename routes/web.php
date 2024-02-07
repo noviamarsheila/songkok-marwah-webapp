@@ -23,3 +23,8 @@ Route::delete('/logout', [LoginController::class, 'logout']);
 Route::get('/dashboard', function () {
     return view('dashboard.main.index');
 })->middleware('auth');
+
+// Product
+Route::controller(ProductController::class)->middleware('auth')->group(function () {
+    Route::get('/dashboard/products/', 'index')->name('products');
+});
