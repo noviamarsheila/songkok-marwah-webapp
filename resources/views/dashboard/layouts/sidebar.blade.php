@@ -10,13 +10,16 @@
         <div class="offcanvas-body d-md-flex vh-100 flex-column p-0 pt-lg-3 overflow-y-auto">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="/dashboard">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard') ? 'active' : '' }} "
+                        aria-current="page" href="/dashboard">
                         <i class="bi bi-sliders"></i>
                         Dashboard
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="/dashboard/products">
+                    {{-- request()->is('dashboard/products*') ? 'active' : '', ketika route yang berawalan dashboard/products, maka aktif --}}
+                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/products*') ? 'active' : '' }}"
+                        href="/dashboard/products">
                         <i class="bi bi-boxes"></i>
                         Products
                     </a>
