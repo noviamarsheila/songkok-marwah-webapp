@@ -29,6 +29,11 @@ Route::get('/dashboard', function () {
 // di chaining middleware 'auth' 
 Route::controller(ProductController::class)->middleware('auth')->group(function () {
     Route::get('/dashboard/products/', 'index')->name('dashboard.products.index');
+    // tampil form add
     Route::get('/dashboard/products/create', 'create')->name('dashboard.products.create');
+    // proses add
     Route::post('/dashboard/products', 'store')->name('dashboard.products.store');
+    //hapus
+    // {product:slug} penjelasan: product itu nama model, slug nama field yang cari
+    Route::delete('/dashboard/products/{product:slug}', 'destroy')->name('dashboard.products.destroy');
 });

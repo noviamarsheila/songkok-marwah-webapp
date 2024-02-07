@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -113,6 +114,14 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        // ambil path gambar unntuk dihapus
+        // $filePath menghasilkan path gambar = public/images/products/songkok-mewah.png
+        $filePath = public_path('/images/products/' . $product->image);
+        if (File::exists($filePath)) {
+            // hapus file tsb
+            File::delete($filePath);
+        }
+        Product::destroy($product->id);
+        return redirect('/dashboard/products')->with('success', 'Product has ben deleted!');
     }
 }
