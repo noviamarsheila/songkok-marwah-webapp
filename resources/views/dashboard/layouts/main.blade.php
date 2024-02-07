@@ -27,9 +27,17 @@
         </div>
     </div>
 
+    <link rel="stylesheet" type="text/css" href="/plugins/trix/trix.css">
+    <script type="text/javascript" src="/plugins/trix/trix.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="/js/script.js"></script>
+    <style>
+        /* hilangkan ikon file */
+        trix-toolbar [data-trix-button-group="file-tools"] {
+            display: none;
+        }
+    </style>
 </body>
 
 </html>

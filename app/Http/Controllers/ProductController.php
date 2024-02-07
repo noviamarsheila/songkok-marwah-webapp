@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -26,7 +28,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.products.tambah', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -37,7 +41,32 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // error message juga bisa di custom agar bhs indo, sila gpt wkwk 🫰
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            // uniqe:products = tidak boleh ada duplikasi
+            'slug' => 'required|unique:products',
+            'category_id' => 'required',
+            // 2024 KB, 2Mb
+            'image' => 'image|file|max:2024',
+            'deskripsi' => 'required|max:255',
+        ]);
+
+        if ($request->file('image')) {
+            // ubah nama gambar, menjadi slug + . + ekstensi: songkok-mewah.png
+            $imageName = $request->slug . '.' . $request->image->getClientOriginalExtension();
+            // untuk menyimpan nama image kedatabase
+            $validatedData['image'] = $imageName;
+            // move image ke folder 'public/images/product'
+            $request->file('image')->move(public_path('images/products'), $imageName);
+            // access di Front-End
+            // {{ asset('images/products/' . $product->image) }}
+            // atau src="/images/products/{{ $product->image }}"
+        }
+        // berguna untuk menghasilkan timpestamp: 2024-02-07 15:30:45
+        $validatedData['publish_at'] = Carbon::now();
+        Product::create($validatedData);
+        return redirect('/dashboard/products')->with('success', 'New product has ben added!');
     }
 
     /**

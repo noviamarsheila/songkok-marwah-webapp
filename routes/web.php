@@ -25,6 +25,10 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 
 // Product
+// dibuar grup routing yang menuju ke product controller
+// di chaining middleware 'auth' 
 Route::controller(ProductController::class)->middleware('auth')->group(function () {
-    Route::get('/dashboard/products/', 'index')->name('products');
+    Route::get('/dashboard/products/', 'index')->name('dashboard.products.index');
+    Route::get('/dashboard/products/create', 'create')->name('dashboard.products.create');
+    Route::post('/dashboard/products', 'store')->name('dashboard.products.store');
 });
