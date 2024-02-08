@@ -65,7 +65,7 @@
                     <h4 id="showName">Name</h4>
                     <h4 id="showSlug">Slug</h4>
                     <h4 id="showCategory">category:</h4>
-                    <div>
+                    <div class="d-flex justify-content-center">
                         <img src="" alt="" id="showImage">
                     </div>
                     <div id="showDeskripsi"></div>
