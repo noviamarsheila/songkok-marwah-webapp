@@ -28,12 +28,16 @@
                         <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $category->name }}</td>
                         <td>
-                            <a href="./edit-category.html" class="badge bg-warning">
+                            <a href="/dashboard/categories/{{ $category->slug }}/edit" class="badge bg-warning">
                                 <i class="bi bi-pencil-square" style="font-size: 1rem"></i>
                             </a>
-                            <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">
-                                <i class="bi bi-trash" style="font-size: 1rem"></i>
-                            </button>
+                            <form action="/dashboard/categories/{{ $category->slug }}" method="POST" class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">
+                                    <i class="bi bi-trash" style="font-size: 1rem"></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

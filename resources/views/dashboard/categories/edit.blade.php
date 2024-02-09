@@ -11,7 +11,7 @@
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Nama Kategori</label>
-                <input type="text" class="form-control" id="name" value="{{ $category->name }}" />
+                <input type="text" class="form-control" id="name" name="name" value="{{ $category->name }}" />
             </div>
             <div class="mb-3">
                 <label for="slug" class="form-label">Slug</label>
@@ -26,14 +26,11 @@
         const nama = document.getElementById("name");
         const slug = document.getElementById("slug");
 
-        nama.addEventListener("keyup", function () {
+        nama.addEventListener("keyup", function() {
             console.log(nama.value)
             let preslug = nama.value;
             preslug = preslug.replace(/ /g, "-");
             slug.value = preslug.toLowerCase();
         });
-
     </script>
 @endsection
-
-

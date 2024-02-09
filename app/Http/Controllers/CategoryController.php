@@ -79,12 +79,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        $validatedData = $request->validate([
+        $rules = [
             'name' => 'required|max:255',
-            'slug' => 'required|unique:categories'
-        ]);
+            'slug' => 'required'
+        ];
 
-
+        if ($request->slug != $category->slug) {
+            $rules['slug'] = 'required|unique:categories';
+        }
+        $validatedData = $request->validate($rules);
         Category::where('id', $category->id)
             ->update($validatedData);
         return redirect('/dashboard/categories')->with('success', 'Kategori berhasil diubah!');
@@ -98,6 +101,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        Category::destroy($category->id);
+        return redirect('/dashboard/categories')->with('success', 'Category berhasil dihapus!');
     }
 }
