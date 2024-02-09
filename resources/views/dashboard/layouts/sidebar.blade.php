@@ -37,7 +37,8 @@
             </h6>
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="/dashboard/categories">
+                    <a class="nav-link d-flex align-items-center gap-2" {{ request()->is('dashboard/categories*') ? 'active' : '' }}
+                        href="/dashboard/categories">
                         <i class="bi bi-tag"></i>
                         Categories
                     </a>
@@ -84,12 +85,17 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="/logout">
-                        <i class="bi bi-box-arrow-right"></i>
-                        Logout
-                    </a>
+                    <form action="/logout" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button class="nav-link d-flex align-items-center gap-2">
+                            <i class="bi bi-box-arrow-right"></i>
+                            Logout
+                        </button>
+                    </form>
                 </li>
             </ul>
         </div>
     </div>
 </div>
+

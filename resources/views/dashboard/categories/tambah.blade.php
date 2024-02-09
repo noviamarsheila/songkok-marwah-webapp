@@ -5,16 +5,28 @@
         <h1 class="h2">Tambah Kategori</h1>
     </div>
     <div class="col-md-5">
-        <form>
+        <form method="POST" action="/dashboard/categories">
+            @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Nama Kategori</label>
-                <input type="text" class="form-control" id="name" />
+                <input type="text" class="form-control" id="name" name="name" />
             </div>
             <div class="mb-3">
                 <label for="slug" class="form-label">Slug</label>
-                <input type="text" class="form-control" id="slug" name="slug" value="" />
+                <input type="text" class="form-control" id="slug" name="slug" />
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+
+    <script>
+        const nama = document.getElementById("name");
+        const slug = document.getElementById("slug");
+
+        nama.addEventListener("keyup", function() {
+            let preslug = nama.value;
+            preslug = preslug.replace(/ /g, "-");
+            slug.value = preslug.toLowerCase();
+        });
+    </script>
 @endsection

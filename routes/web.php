@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +27,7 @@ Route::get('/dashboard', function () {
     return view('dashboard.main.index');
 })->middleware('auth');
 
-// Dashboard Product
+// Dashboard Produk
 Route::controller(ProductController::class)->middleware('auth')->group(function () {
     Route::get('/dashboard/products/', 'index')->name('dashboard.products.index');
     // tampil form add
@@ -40,4 +41,11 @@ Route::controller(ProductController::class)->middleware('auth')->group(function 
     //hapus
     // {product:slug} penjelasan: product itu nama model, slug nama field yang cari
     Route::delete('/dashboard/products/{product:slug}', 'destroy')->name('dashboard.products.destroy');
+});
+
+// Dashboard Kategori
+Route::controller(CategoryController::class)->middleware('auth')->group(function (){
+    Route::get('/dashboard/categories/' , 'index')->name('dashboard.categories.index');
+    Route::get('/dahsboars/categories/create', 'create')->name('dashboard.categories.create');
+    Route::get('/dashboard/categories', 'store')->name('dashboard.categories.store');
 });
