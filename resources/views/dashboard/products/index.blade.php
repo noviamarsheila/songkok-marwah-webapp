@@ -5,14 +5,11 @@
         <h1 class="h2">Daftar Produk</h1>
     </div>
     @if (session()->has('success'))
-        <div class="alert alert-success col-lg-8" role="alert">
+        <div class="alert alert-success col-lg-8 d-flex justify-content-between" role="alert">
             {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
 
     <a href="/dashboard/products/create" class="btn btn-primary">Tambahkan Produk Baru</a>
     <!-- tabel -->
@@ -53,40 +50,39 @@
             </tbody>
         </table>
     </div>
+
     <!-- Modal -->
     <div class="modal fade" id="modalShowProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Product</h1>
+                    <h4 class="modal-title fw-bold text-primary" id="showName">Name</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h4 id="showName">Name</h4>
-                    <h4 id="showSlug">Slug</h4>
-                    <h4 id="showCategory">category:</h4>
-                    <div class="d-flex justify-content-center">
-                        <img src="" alt="" id="showImage">
+                    <h6>Category: <small id="showCategory"></small></h6>
+                    <div class="">
+                        <img src="" alt="" id="showImage" class="img-fluid" style="max-width: 200px">
                     </div>
+                    <h6>Deskripsi: </h6>
                     <div id="showDeskripsi"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
+
+
     <script>
         function showProduct(product) {
             const showName = document.getElementById('showName');
-            const showSlug = document.getElementById('showSlug');
             const showImage = document.getElementById('showImage');
             const showCategory = document.getElementById('showCategory');
             const showDeskripsi = document.getElementById('showDeskripsi');
 
             showName.textContent = product.name;
-            showSlug.textContent = product.slug;
             showCategory.textContent = product.category.name;
             showImage.src = `{{ asset('images/products/${product.image}') }}`;
             showDeskripsi.innerHTML = product.deskripsi;
