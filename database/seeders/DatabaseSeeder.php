@@ -25,14 +25,19 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Category::create([
-            'name' => 'songkok',
+            'name' => 'Songkok',
             'slug' => 'songkok',
         ]);
 
+        Category::create([
+            'name' => 'Sarung',
+            'slug' => 'sarung',
+        ]);
+
         Product::create([
-            'name' => 'songkok uye',
-            'deskripsi' => 'songkok uye lorem ipsum dolor amet',
-            'slug' => 'songkok-uye',
+            'name' => 'Songkok Marwah NU',
+            'deskripsi' => 'Songkok adalah sebuah penutup kepala tradisional yang sering dikenakan oleh pria muslim di berbagai negara di Asia Tenggara, khususnya di Indonesia, Malaysia, dan Brunei. Songkok memiliki bentuk yang menyerupai topi dengan ciri khas berbentuk setengah bulan, biasanya terbuat dari bahan seperti kulit, kain, atau serat alami lainnya. Songkok sering kali dipakai sebagai bagian dari pakaian resmi dalam berbagai kesempatan, termasuk acara keagamaan, pernikahan, dan upacara adat, serta sebagai bagian dari pakaian sehari-hari dalam beberapa budaya. Selain menjadi simbol identitas keagamaan dan kebangsaan, songkok juga memiliki nilai historis dan budaya yang dalam di masyarakat setempat.',
+            'slug' => 'songkok-marwah-nu',
             'image' => 'songkok-uye.png',
             'category_id' => '1'
         ]);

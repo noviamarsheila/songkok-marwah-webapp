@@ -42,7 +42,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // error message juga bisa di custom agar bhs indo, sila gpt wkwk 🫰
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             // uniqe:products = tidak boleh ada duplikasi
@@ -50,7 +49,7 @@ class ProductController extends Controller
             'category_id' => 'required',
             // 2024 KB, 2Mb
             'image' => 'image|file|max:2024',
-            'deskripsi' => 'required|max:255',
+            'deskripsi' => 'required',
         ]);
 
         if ($request->image) {
@@ -67,7 +66,7 @@ class ProductController extends Controller
         // berguna untuk menghasilkan timpestamp: 2024-02-07 15:30:45
         $validatedData['publish_at'] = Carbon::now();
         Product::create($validatedData);
-        return redirect('/dashboard/products')->with('success', 'New product has ben added!');
+        return redirect('/dashboard/products')->with('success', 'Produk berhasil ditambahkan!');
     }
 
     /**
@@ -156,6 +155,6 @@ class ProductController extends Controller
             File::delete($filePath);
         }
         Product::destroy($product->id);
-        return redirect('/dashboard/products')->with('success', 'Product has ben deleted!');
+        return redirect('/dashboard/products')->with('success', 'Produk berhasil dihapus!');
     }
 }

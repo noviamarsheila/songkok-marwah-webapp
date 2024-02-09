@@ -20,13 +20,13 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 // Logout
 Route::delete('/logout', [LoginController::class, 'logout']);
+
+// Dashboard
 Route::get('/dashboard', function () {
     return view('dashboard.main.index');
 })->middleware('auth');
 
-// Product
-// dibuar grup routing yang menuju ke product controller
-// di chaining middleware 'auth' 
+// Dashboard Product
 Route::controller(ProductController::class)->middleware('auth')->group(function () {
     Route::get('/dashboard/products/', 'index')->name('dashboard.products.index');
     // tampil form add
@@ -34,7 +34,7 @@ Route::controller(ProductController::class)->middleware('auth')->group(function 
     // proses add
     Route::post('/dashboard/products', 'store')->name('dashboard.products.store');
     // edit
-    // {product:slug} penjelasan: product itu nama model, slug nama field yang cari 
+    // {product:slug} penjelasan: product itu nama model, slug nama field yang cari
     Route::get('/dashboard/products/{product:slug}/edit', 'edit')->name('dashboard.products.edit');
     Route::put('/dashboard/products/{product:slug}', 'update')->name('dashboard.products.update');
     //hapus
