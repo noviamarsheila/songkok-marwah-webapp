@@ -136,7 +136,7 @@ class ProductController extends Controller
 
         Product::where('id', $product->id)
             ->update($validatedData);
-        return redirect('/dashboard/products')->with('success', 'Post has ben updated!');
+        return redirect('/dashboard/products')->with('success', 'Produk berhasil diubah!');
     }
 
     /**

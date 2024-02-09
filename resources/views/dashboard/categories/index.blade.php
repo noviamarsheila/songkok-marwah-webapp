@@ -11,7 +11,7 @@
         </div>
     @endif
 
-    <a href="dashboard/categories/create" class="btn btn-primary">Tambahkan Kategori Baru</a>
+    <a href="/dashboard/categories/create" class="btn btn-primary">Tambahkan Kategori Baru</a>
     <!-- tabel -->
     <div class="row col-md-8 mt-3 ms-2 mb-5">
         <table class="table table-striped small">
@@ -28,7 +28,7 @@
                     <th scope="row">{{ $loop->iteration }}</th>
                     <td>{{ $category->name }}</td>
                     <td>
-                        <a href="./edit-category.html" class="badge bg-warning">
+                        <a href="/dashboard/categories/{{ $category->slug }}/edit" class="badge bg-warning">
                             <i class="bi bi-pencil-square" style="font-size: 1rem"></i>
                         </a>
                         <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">

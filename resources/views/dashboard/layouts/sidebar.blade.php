@@ -37,7 +37,7 @@
             </h6>
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" {{ request()->is('dashboard/categories*') ? 'active' : '' }}
+                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/categories*') ? 'active' : '' }}"
                         href="/dashboard/categories">
                         <i class="bi bi-tag"></i>
                         Categories

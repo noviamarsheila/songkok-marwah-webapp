@@ -44,8 +44,10 @@ Route::controller(ProductController::class)->middleware('auth')->group(function 
 });
 
 // Dashboard Kategori
-Route::controller(CategoryController::class)->middleware('auth')->group(function (){
-    Route::get('/dashboard/categories/' , 'index')->name('dashboard.categories.index');
-    Route::get('/dahsboars/categories/create', 'create')->name('dashboard.categories.create');
-    Route::get('/dashboard/categories', 'store')->name('dashboard.categories.store');
+Route::controller(CategoryController::class)->middleware('auth')->group(function () {
+    Route::get('/dashboard/categories/', 'index')->name('dashboard.categories.index');
+    Route::get('/dashboard/categories/create', 'create')->name('dashboard.categories.create');
+    Route::post('/dashboard/categories', 'store')->name('dashboard.categories.store');
+    Route::get('/dashboard/categories/{category:slug}/edit', 'edit')->name('dashboard.categories.edit');
+    Route::put('/dashboard/categories/{category:slug}', 'update')->name('dashboard.categories.update');
 });
