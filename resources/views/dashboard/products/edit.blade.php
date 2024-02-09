@@ -4,9 +4,7 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Edit Produk</h1>
     </div>
-    <div class="my-4">
-        <a href="/dashboard/products" class="">kembali...</a>
-    </div>
+    @include('dashboard.products.linkback')
     <!-- Form Tambah Produk -->
     <div class="col-lg-9">
         <form class="mb-5" action="/dashboard/products/{{ $product->slug }}" method="post" enctype="multipart/form-data">
@@ -85,7 +83,7 @@
             preslug = preslug.replace(/ /g, "-");
             slug.value = preslug.toLowerCase();
         });
-        // block fitur upload file 
+        // block fitur upload file
         document.addEventListener('trix-file-accept', (e) => {
             e.preventDefault();
         });

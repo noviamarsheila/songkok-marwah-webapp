@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('dashboard.categories.index',[
+        return view('dashboard.categories.index', [
             'categories' => Category::all()
         ]);
     }
@@ -39,12 +39,11 @@ class CategoryController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'slug' => 'required|unique'
+            'slug' => 'required|unique:categories'
         ]);
 
         Category::create($validatedData);
-
-
+        return redirect('/dashboard/categories')->with('success', 'Kategori berhasil ditambahkan');
     }
 
     /**
@@ -66,7 +65,9 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('dashboard.categories.edit', [
+            'category' => $category
+        ]);
     }
 
     /**
@@ -78,7 +79,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'slug' => 'required|unique:categories'
+        ]);
+
+
+        Category::where('id', $category->id)
+            ->update($validatedData);
+        return redirect('/dashboard/categories')->with('success', 'Kategori berhasil diubah!');
     }
 
     /**

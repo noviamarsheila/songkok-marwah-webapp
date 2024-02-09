@@ -11,7 +11,7 @@
         </div>
     @endif
 
-    <a href="dashboard/categories/create" class="btn btn-primary">Tambahkan Kategori Baru</a>
+    <a href="/dashboard/categories/create" class="btn btn-primary">Tambahkan Kategori Baru</a>
     <!-- tabel -->
     <div class="row col-md-8 mt-3 ms-2 mb-5">
         <table class="table table-striped small">
