@@ -37,38 +37,38 @@
             </h6>
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2"
-                        {{ request()->is('dashboard/categories*') ? 'active' : '' }} href="/dashboard/categories">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/categories*') ? 'active' : '' }}"
+                         href="/dashboard/categories">
                         <i class="bi bi-tag"></i>
                         Categories
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="/dashboard/about-company">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/aboutcompany*') ? 'active' : '' }}" href="/dashboard/about-company">
                         <i class="bi bi-buildings"></i>
                         About Company
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="/dashboard/layanan-kami ">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/layanan*') ? 'active' : '' }}" href="/dashboard/layanan-kami ">
                         <i class="bi bi-clipboard"></i>
                         Layanan Kami
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="/dashboard/mengapa-pilih-kami">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/menuwhychooseus*') ? 'active' : '' }}" href="/dashboard/mengapa-pilih-kami">
                         <i class="bi bi-file-earmark-text"></i>
                         Menu Mengapa Pilih Kami
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="/dashboard/faq">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/faq*') ? 'active' : '' }}" href="/dashboard/faq">
                         <i class="bi bi-patch-question"></i>
                         FAQ
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="/dashboard/team">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/team*') ? 'active' : '' }}" href="/dashboard/team">
                         <i class="bi bi-people"></i>
                         Team Pemasaran
                     </a>
@@ -79,7 +79,7 @@
 
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="/dashboard/settings">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/categories*') ? 'active' : '' }}" href="/dashboard/settings">
                         <i class="bi bi-person"></i>
                         Settings Account
                     </a>
