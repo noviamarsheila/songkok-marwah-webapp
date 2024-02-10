@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\AboutCompanyController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
-use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,4 +52,9 @@ Route::controller(CategoryController::class)->middleware('auth')->group(function
     Route::get('/dashboard/categories/{category:slug}/edit', 'edit')->name('dashboard.categories.edit');
     Route::put('/dashboard/categories/{category:slug}', 'update')->name('dashboard.categories.update');
     Route::delete('/dashboard/categories/{category:slug}', 'destroy')->name('dashboard.categories.destroy');
+});
+
+// Dashboard About Company
+Route::controller(AboutCompanyController::class)->middleware('auth')->group(function () {
+    Route::get('/dashboard/about-company', 'index')->name('dashboard.aboutcompany.index');
 });

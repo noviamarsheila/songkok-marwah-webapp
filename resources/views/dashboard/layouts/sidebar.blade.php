@@ -38,13 +38,13 @@
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/categories*') ? 'active' : '' }}"
-                         href="/dashboard/categories">
+                        href="/dashboard/categories">
                         <i class="bi bi-tag"></i>
                         Categories
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/aboutcompany*') ? 'active' : '' }}" href="/dashboard/about-company">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/about-company*') ? 'active' : '' }}" href="/dashboard/about-company">
                         <i class="bi bi-buildings"></i>
                         About Company
                     </a>

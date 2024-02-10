@@ -14,7 +14,9 @@ class AboutCompanyController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.aboutcompany.index', [
+            'profiles' => AboutCompany::all()
+        ]);
     }
 
     /**

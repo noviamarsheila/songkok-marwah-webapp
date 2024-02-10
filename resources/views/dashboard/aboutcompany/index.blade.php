@@ -17,13 +17,14 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($profiles as $profile)
             <tr>
-                <th scope="row">1</th>
-                <td>Ott</td>
-                <td>marwah@gmail.com</td>
-                <td>Anne</td>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td>{{ $profile->name }}</td>
+                <td>{{ $profile->email }}</td>
+                <td>{{ $profile->workshop }}</td>
                 <td>
-                    <a href="" class="badge bg-info mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <a href="" class="badge bg-info mb-1" data-bs-toggle="modal" onclick="showProfile({{ $profile }}) data-bs-target="#ModalShowProfile">
                         <i class="bi bi-eye" style="font-size: 1rem"></i>
                     </a>
                     <a href="./edit-aboutcompany.html" class="badge bg-warning mb-1">
@@ -34,53 +35,45 @@
                     </button>
                 </td>
             </tr>
+            @endforeach
+
         </tbody>
     </table>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="ModalShowProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title fw-bold text-primary" id="exampleModalLabel">Nama Perusahaan</h5>
+                <h5 class="modal-title fw-bold text-primary" id="exampleModalLabel" id="showName">Nama Perusahaan</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div>
-                    <h6>Deskripsi:</h6>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores qui id esse facere consectetur repellendus reiciendis non. Illo, illum assumenda? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, maxime.
-                    </p>
-                </div>
-                <div>
-                    <h6>Akta Pendiri:</h6>
-                    <p>Songkok</p>
-                </div>
-                <div>
-                    <h6>Alamat:</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <div>
-                    <h6>Workshop:</h6>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div>
-                    <h6>Email:</h6>
-                    <p>info@songkokmarwah.com</p>
-                </div>
-                <div>
-                    <h6>No HP:</h6>
-                    <p>082367489918</p>
-                </div>
-                <div>
-                    <h6>Web:</h6>
-                    <p>songkokmarwah.com</p>
-                </div>
-                <div>
-                    <h6>Link Map:</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, corrupti sequi! Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
+                    <h6>Deskripsi:
+                        <small id="showDeskripsi"></small>
+                    </h6>
+                    <h6>Akta Pendiri:
+                        <small id="showAkta"></small>
+                    </h6>
+                    <h6>Alamat:
+                        <small id="showAlamat"></small>
+                    </h6>
+                    <h6>Workshop:
+                        <small id="showWorkshop"></small>
+                    </h6>
+                    <h6>Email:
+                        <small id="showEmail"></small>
+                    </h6>
+                    <h6>No HP:
+                        <small id="showNohp"></small>
+                    </h6>
+                    <h6>Web:
+                        <small id="showWeb"></small>
+                    </h6>
+                    <h6>Link Map:
+                        <small id="linkMap"></small>
+                    </h6>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -88,4 +81,29 @@
         </div>
     </div>
 </div>
+
+<script>
+    function showProfile(profile) {
+        const showName = document.getElementById('showName');
+        const showDeskripsi = document.getElementById('showDeskripsi');
+        const showAktaPendiri = document.getElementById('showAkta');
+        const showAlamat = document.getElementById('showAlamat');
+        const showWorkshop = document.getElementById('showWorkshop');
+        const showNohp = document.getElementById('showNohp');
+        const showWeb = document.getElementById('showWeb');
+        const showEmail = document.getElementById('showEmail');
+        const showLinkMap = document.getElementById('linkMap');
+
+        showName.textContent = profile.name;
+        showDeskripsi.innerHTML = profile.deskripsi;
+        showAktaPendiri.innerHTML = profile.akta_pendiri;
+        showAlamat.innerHTML = profile.alamat;
+        showWorkshop.innerHTML = profile.workshop;
+        showNohp.innerHTML = profile.no_hp;
+        showWeb.innerHTML =profile.web;
+        showEmail.innerHTML = profile.email;
+        showLinkMap.innerHTML = profile.link_map;
+    }
+</script>
+
 @endsection
