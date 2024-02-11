@@ -7,6 +7,7 @@ use App\Http\Controllers\LayananController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PilihKamiController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -92,4 +93,14 @@ Route::controller(FaqController::class)->middleware('auth')->group(function () {
     Route::get('/dashboard/faq/{faq:id}/edit', 'edit')->name('dashboard.faq.edit');
     Route::put('/dashboard/faq/{faq:id}', 'update')->name('dashboard.faq.update');
     Route::delete('/dashboard/faq/{faq:id}', 'destroy')->name('dashboard.faq.destroy');
+});
+
+// Dashboard Team Pemasaran
+Route::controller(TeamController::class)->middleware('auth')->group(function () {
+    Route::get('/dashboard/team', 'index')->name('dashboard.team.index');
+    Route::get('/dashboard/team/create', 'create')->name('dashboard.team.create');
+    Route::post('/dashboard/team', 'store')->name('dashboard.team.store');
+    Route::get('/dashboard/team/{team:id}/edit', 'edit')->name('dashboard.team.edit');
+    Route::put('/dashboard/team/{team:id}', 'update')->name('dashboard.team.update');
+    Route::delete('/dashboard/team/{team:id}', 'destroy')->name('dashboard.team.destroy');
 });

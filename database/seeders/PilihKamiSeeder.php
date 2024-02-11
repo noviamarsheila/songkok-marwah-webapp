@@ -17,7 +17,6 @@ class PilihKamiSeeder extends Seeder
         PilihKami::create([
             'deskripsi' => 'Mengutamakan kualitas dan bahan serta harga yang kompetitif.'
         ]);
-
         PilihKami::create([
             'deskripsi' => 'Pengiriman tepat waktu dan dapat dipilih sesuai kebutuhan.'
         ]);

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PilihKami;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
@@ -14,7 +14,9 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.team.index', [
+            'teams' => Team::all()
+        ]);
     }
 
     /**
@@ -24,7 +26,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.team.tambah');
     }
 
     /**
@@ -35,16 +37,24 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'wilayah' => 'required|max:255',
+            'no_hp' => 'required|max:12',
+        ]);
+
+        Team::create($validatedData);
+
+        return redirect('/dashboard/team')->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PilihKami  $pilihKami
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function show(PilihKami $pilihKami)
+    public function show(Team $team)
     {
         //
     }
@@ -52,34 +62,46 @@ class TeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PilihKami  $pilihKami
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function edit(PilihKami $pilihKami)
+    public function edit(Team $team)
     {
-        //
+        return view('dashboard.team.edit', [
+            'team' => $team
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PilihKami  $pilihKami
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PilihKami $pilihKami)
+    public function update(Request $request, Team $team)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'wilayah' => 'required|max:255',
+            'no_hp' => 'required|max:12',
+        ]);
+
+        $team->update($validatedData);
+
+        return redirect('/dashboard/team')->with('success', 'Data berhasil diubah!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PilihKami  $pilihKami
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PilihKami $pilihKami)
+    public function destroy(Team $team)
     {
-        //
+        $team->delete();
+
+        return redirect('/dashboard/team')->with('success', 'Data berhasil dihapus!');
     }
 }
