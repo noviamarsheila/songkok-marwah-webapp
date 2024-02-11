@@ -17,8 +17,7 @@
                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $profile->name) }}"" />
             </div>
             <div class="form-floating mb-3">
-                <textarea class="form-control" name="deskripsi" id="floatingTextarea2" style="height: 100px" >
-                    <?php echo htmlspecialchars($profile->deskripsi); ?></textarea>
+                <textarea class="form-control" name="deskripsi" id="floatingTextarea2" style="height: 100px"><?php echo htmlspecialchars($profile->deskripsi); ?></textarea>
                 <label for="floatingTextarea2">Deskripsi</label>
             </div>
             <div class="mb-3">

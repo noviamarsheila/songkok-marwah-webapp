@@ -50,13 +50,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/layanan*') ? 'active' : '' }}" href="/dashboard/layanan-kami ">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/layanan-kami*') ? 'active' : '' }}" href="/dashboard/layanan-kami">
                         <i class="bi bi-clipboard"></i>
                         Layanan Kami
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/menuwhychooseus*') ? 'active' : '' }}" href="/dashboard/mengapa-pilih-kami">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/mengapa-pilih-kami*') ? 'active' : '' }}" href="/dashboard/mengapa-pilih-kami">
                         <i class="bi bi-file-earmark-text"></i>
                         Menu Mengapa Pilih Kami
                     </a>

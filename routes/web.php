@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutCompanyController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -59,5 +60,14 @@ Route::controller(AboutCompanyController::class)->middleware('auth')->group(func
     Route::get('/dashboard/about-company', 'index')->name('dashboard.aboutcompany.index');
     Route::get('/dashboard/about-company/{about_company:id}/edit', 'edit')->name('dashboard.aboutcompany.edit');
     Route::put('/dashboard/about-company/{about_company:id}', 'update')->name('dashboard.aboutcompany.update');
-    Route::delete('dashboard/about-company/{about_company:id}', 'destroy')->name('dashboard.aboutcompany.destroy');
+});
+
+// Dashboard Layanan Kami
+Route::controller(LayananController::class)->middleware('auth')->group(function () {
+    Route::get('/dashboard/layanan-kami', 'index')->name('dashboard.layanan.index');
+    Route::get('/dashboard/layanan-kami/create', 'create')->name('dashboard.layanan.create');
+    Route::post('/dashboard/layanan-kami', 'store')->name('dashboard.layanan.store');
+    Route::get('/dashboard/layanan-kami/{layanan:id}/edit', 'edit')->name('dashboard.layanan.edit');
+    Route::put('/dashboard/layanan-kami/{layanan:id}', 'update')->name('dashboard.layanan.update');
+    Route::delete('/dashboard/layanan-kami/{layanan:id}', 'destroy')->name('dashboard.layanan.destroy');
 });
