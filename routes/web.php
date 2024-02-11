@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutCompanyController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PilihKamiController;
@@ -81,4 +82,14 @@ Route::controller(PilihKamiController::class)->middleware('auth')->group(functio
     Route::get('/dashboard/mengapa-pilih-kami/{pilih_kami:id}/edit', 'edit')->name('dashboard.pilihkami.edit');
     Route::put('/dashboard/mengapa-pilih-kami/{pilih_kami:id}', 'update')->name('dashboard.pilihkami.update');
     Route::delete('/dashboard/mengapa-pilih-kami/{pilih_kami:id}', 'destroy')->name('dashboard.pilihkami.destroy');
+});
+
+// Dashboard FAQ
+Route::controller(FaqController::class)->middleware('auth')->group(function () {
+    Route::get('/dashboard/faq', 'index')->name('dashboard.faq.index');
+    Route::get('/dashboard/faq/create', 'create')->name('dashboard.faq.create');
+    Route::post('/dashboard/faq', 'store')->name('dashboard.faq.store');
+    Route::get('/dashboard/faq/{faq:id}/edit', 'edit')->name('dashboard.faq.edit');
+    Route::put('/dashboard/faq/{faq:id}', 'update')->name('dashboard.faq.update');
+    Route::delete('/dashboard/faq/{faq:id}', 'destroy')->name('dashboard.faq.destroy');
 });

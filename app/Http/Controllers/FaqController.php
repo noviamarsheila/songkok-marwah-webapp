@@ -14,7 +14,9 @@ class FaqController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.faq.index', [
+            'faqs' => Faq::all()
+        ]);
     }
 
     /**
@@ -24,7 +26,7 @@ class FaqController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.faq.tambah');
     }
 
     /**
@@ -35,7 +37,15 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'heading' => 'required|max:255',
+            'target' => 'required|max:255',
+            'pertanyaan' => 'required|max:255',
+            'jawaban' => 'required|max:255'
+        ]);
+
+        Faq::create($validatedData);
+        return redirect('/dashboard/faq')->with('success', 'Faq berhasil ditambahkan');
     }
 
     /**
@@ -57,7 +67,9 @@ class FaqController extends Controller
      */
     public function edit(Faq $faq)
     {
-        //
+        return view('dashboard.faq.edit', [
+            'faq' => $faq
+        ]);
     }
 
     /**
@@ -69,7 +81,15 @@ class FaqController extends Controller
      */
     public function update(Request $request, Faq $faq)
     {
-        //
+        $validatedData = $request->validate([
+            'heading' => 'required|max:255',
+            'target' => 'required|max:255',
+            'pertanyaan' => 'required|max:255',
+            'jawaban' => 'required|max:255'
+        ]);
+
+        $faq->update($validatedData);
+        return redirect('/dashboard/faq')->with('success', 'Faq berhasil diubah!');
     }
 
     /**
@@ -80,6 +100,8 @@ class FaqController extends Controller
      */
     public function destroy(Faq $faq)
     {
-        //
+        $faq->delete();
+
+        return redirect('/dashboard/faq')->with('success', 'Faq berhasil dihapus!');
     }
 }

@@ -4,13 +4,13 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">List layanan</h1>
     </div>
+    <a href="/dashboard/layanan-kami/create" class="btn btn-primary mb-2">Tambahkan Layanan Baru</a>
     @if (session()->has('success'))
     <div class="alert alert-success col-lg-8 d-flex justify-content-between" role="alert">
         {{ session('success') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
-    <a href="/dashboard/layanan-kami/create" class="btn btn-primary">Tambahkan Layanan Baru</a>
     <!-- tabel -->
     <div class="row col-md-9 mt-3 ms-2 mb-5">
         <table class="table table-striped small">
