@@ -7,6 +7,7 @@ use App\Http\Controllers\LayananController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PilihKamiController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SosmedController;
 use App\Http\Controllers\TeamController;
 use App\Models\Category;
 use App\Models\Product;
@@ -112,3 +113,16 @@ Route::controller(TeamController::class)->middleware('auth')->group(function () 
     Route::put('/dashboard/team/{team:id}', 'update')->name('dashboard.team.update');
     Route::delete('/dashboard/team/{team:id}', 'destroy')->name('dashboard.team.destroy');
 });
+
+// Dashboard Sosmed
+Route::controller(SosmedController::class)->middleware('auth')->group(function () {
+    Route::get('/dashboard/sosmed', 'index')->name('dashboard.sosmed.index');
+    Route::get('/dashboard/sosmed/create', 'create')->name('dashboard.sosmed.create');
+    Route::post('/dashboard/sosmed', 'store')->name('dashboard.sosmed.store');
+    Route::get('/dashboard/sosmed/{sosmed:id}/edit', 'edit')->name('dashboard.sosmed.edit');
+    Route::put('/dashboard/sosmed/{sosmed:id}', 'update')->name('dashboard.sosmed.update');
+    Route::delete('/dashboard/sosmed/{sosmed:id}', 'destroy')->name('dashboard.sosmed.destroy');
+});
+
+// Dashboard Setting
+Route::controller();
