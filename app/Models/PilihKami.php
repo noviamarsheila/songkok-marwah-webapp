@@ -10,4 +10,5 @@ class PilihKami extends Model
     use HasFactory;
     protected $table = 'pilih_kami';
 
+    protected $fillable = ['deskripsi'];
 }

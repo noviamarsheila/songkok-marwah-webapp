@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutCompanyController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PilihKamiController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -70,4 +71,14 @@ Route::controller(LayananController::class)->middleware('auth')->group(function 
     Route::get('/dashboard/layanan-kami/{layanan:id}/edit', 'edit')->name('dashboard.layanan.edit');
     Route::put('/dashboard/layanan-kami/{layanan:id}', 'update')->name('dashboard.layanan.update');
     Route::delete('/dashboard/layanan-kami/{layanan:id}', 'destroy')->name('dashboard.layanan.destroy');
+});
+
+// Dashboard Menu Mengapa Memilih Kami
+Route::controller(PilihKamiController::class)->middleware('auth')->group(function () {
+    Route::get('/dashboard/mengapa-pilih-kami', 'index')->name('dashboard.pilihkami.index');
+    Route::get('/dashboard/mengapa-pilih-kami/create', 'create')->name('dashboard.pilihkami.create');
+    Route::post('/dashboard/mengapa-pilih-kami', 'store')->name('dashboard.pilihkami.store');
+    Route::get('/dashboard/mengapa-pilih-kami/{pilih_kami:id}/edit', 'edit')->name('dashboard.pilihkami.edit');
+    Route::put('/dashboard/mengapa-pilih-kami/{pilih_kami:id}', 'update')->name('dashboard.pilihkami.update');
+    Route::delete('/dashboard/mengapa-pilih-kami/{pilih_kami:id}', 'destroy')->name('dashboard.pilihkami.destroy');
 });
