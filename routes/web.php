@@ -132,4 +132,5 @@ Route::controller(UserController::class)->middleware('auth')->group(function () 
     Route::put('/dashboard/settings', 'update')->name('dashboard.setting.update');
     // Ubah PW
     Route::get('/dashboard/changepw', 'changepw')->name('dashboard.setting.changepw');
+    Route::put('/dashboard/changepw', 'updatepw')->name('dashboard.setting.updatepw');
 });

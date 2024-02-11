@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -89,6 +90,33 @@ class UserController extends Controller
             ->update($validatedData);
 
         return redirect('dashboard')->with('success', 'Profile updated successfully');
+    }
+
+    public function updatepw(Request $request, User $user)
+    {
+        // Validate the form data
+        $validatedData = $request->validate([
+            'password_lama' => 'required',
+            'password_baru' => 'required|string|min:8|confirmed',
+        ]);
+
+        // Get the current user
+        $user = Auth::user();
+
+        // Verify the current password
+        if (!Hash::check($request->password_lama, $user->password)) {
+            return redirect()->back()->withErrors(['password_lama' => 'Password lama tidak sesuai']);
+        }
+
+        // Update the user's password
+        $user->password = Hash::make($request->password_baru);
+
+
+        User::where('id', $user->id)
+            ->update($validatedData);
+
+        // Redirect back with success message
+        return redirect('dashboard')->with('success', 'Password berhasil diubah');
     }
 
     /**

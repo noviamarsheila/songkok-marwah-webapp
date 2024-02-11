@@ -10,21 +10,31 @@
 <div class="row">
     <div class="col-lg-5 ps-3 pt-3">
         <h4>Ubah Password</h4>
-        <form>
+
+        <form method="POST" action="/dashboard/changepw">
+            @method('PUT')
+            @csrf
             <div class="mb-3">
-                <label for="password" class="form-label">Password Lama</label>
-                <input type="password" class="form-control" id="password" />
+                <label for="password_lama" class="form-label">Password Lama</label>
+                <input type="password" class="form-control" id="password_lama" name="password_lama" />
+                @error('password_lama')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
-                <label for="passwordbaru" class="form-label">Password Baru</label>
-                <input type="passwordbaru" class="form-control" id="passwordbaru" />
+                <label for="password_baru" class="form-label">Password Baru</label>
+                <input type="password" class="form-control" id="password_baru" name="password_baru" />
+                @error('password_baru')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
-                <label for="passwordbaru2" class="form-label">Confirm Password Baru</label>
-                <input type="passwordbaru2" class="form-control" id="passwordbaru2" />
+                <label for="password_baru_confirmation" class="form-label">Konfirmasi Password Baru</label>
+                <input type="password" class="form-control" id="password_baru_confirmation" name="password_baru_confirmation" />
             </div>
-            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
         </form>
+
     </div>
 </div>
 @endsection
