@@ -57,4 +57,7 @@ Route::controller(CategoryController::class)->middleware('auth')->group(function
 // Dashboard About Company
 Route::controller(AboutCompanyController::class)->middleware('auth')->group(function () {
     Route::get('/dashboard/about-company', 'index')->name('dashboard.aboutcompany.index');
+    Route::get('/dashboard/about-company/{about_company:id}/edit', 'edit')->name('dashboard.aboutcompany.edit');
+    Route::put('/dashboard/about-company/{about_company:id}', 'update')->name('dashboard.aboutcompany.update');
+    Route::delete('dashboard/about-company/{about_company:id}', 'destroy')->name('dashboard.aboutcompany.destroy');
 });

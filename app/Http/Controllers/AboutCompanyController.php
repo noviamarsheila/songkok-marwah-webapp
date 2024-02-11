@@ -59,7 +59,9 @@ class AboutCompanyController extends Controller
      */
     public function edit(AboutCompany $aboutCompany)
     {
-        //
+        return view('dashboard.aboutcompany.edit', [
+            'profile' => $aboutCompany
+        ]);
     }
 
     /**
@@ -71,7 +73,24 @@ class AboutCompanyController extends Controller
      */
     public function update(Request $request, AboutCompany $aboutCompany)
     {
-        //
+
+        $rules = [
+            'name' => 'required|max:255',
+            'deskripsi' => 'required|max:255',
+            'alamat' => 'required|max:255',
+            'workshop' => 'required|max:255',
+            'no_hp' => 'required|max:14',
+            'web' => 'required|max:255',
+            'email' => 'required|max:255',
+            'link_map' => 'required|max:255',
+            'akta_pendiri' => 'nullable'
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        $aboutCompany->update($validatedData);
+
+        return redirect('/dashboard/about-company')->with('success', 'Data berhasil diubah!');
     }
 
     /**

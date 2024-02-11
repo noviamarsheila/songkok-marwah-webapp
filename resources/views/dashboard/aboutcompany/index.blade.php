@@ -4,9 +4,15 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Tentang Profil Perusahaan</h1>
 </div>
+@if (session()->has('success'))
+<div class="alert alert-success col-lg-8 d-flex justify-content-between" role="alert">
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
 <!-- tabel -->
 <div class="row col-lg-8 mt-3 ms-2 mb-5">
-    <table class="table table-striped small">
+    <table class="table table-striped small table-responsive">
         <thead>
             <tr>
                 <th scope="col">No</th>
@@ -27,12 +33,9 @@
                     <a href="" class="badge bg-info mb-1" data-bs-toggle="modal" onclick="showProfile({{ $profile }})" data-bs-target="#ModalShowProfile">
                         <i class="bi bi-eye" style="font-size: 1rem"></i>
                     </a>
-                    <a href="./edit-aboutcompany.html" class="badge bg-warning mb-1">
+                    <a href="/dashboard/about-company/{{ $profile->id }}/edit" class="badge bg-warning mb-1">
                         <i class="bi bi-pencil-square" style="font-size: 1rem"></i>
                     </a>
-                    <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')">
-                        <i class="bi bi-trash" style="font-size: 1rem"></i>
-                    </button>
                 </td>
             </tr>
             @endforeach
@@ -54,7 +57,7 @@
                     <h6>Deskripsi:</h6>
                     <p id="showDeskripsi"></p>
                     <h6>Akta Pendiri:</h6>
-                    <p id="showAktaPendiri"></p>
+                    <p id="showAkta"></p>
                     <h6>Alamat:</h6>
                     <p id="showAlamat"></p>
                     <h6>Workshop:</h6>

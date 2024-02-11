@@ -5,46 +5,52 @@
         <h1 class="h2">Edit Profile Company</h1>
     </div>
     <div class="my-4">
-        <a href="./dashboard-about-company.html" class="text-decoration-none">kembali...</a>
+        <a href="/dashboard/about-company" class="text-decoration-none">kembali...</a>
     </div>
     <!-- Form Tambah Produk -->
     <div class="col-lg-9">
-        <form class="mb-5">
+        <form class="mb-5" action="/dashboard/about-company/{{ $profile->id }}" method="post">
+            @method('put')
+            @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Nama Perusahaan</label>
-                <input type="text" class="form-control" id="name" value="PT INTI MARWAH INDUSTRI" />
+                <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $profile->name) }}"" />
             </div>
             <div class="form-floating mb-3">
-                <textarea class="form-control" name="deskripsi" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px">Nilai Awal</textarea>
+                <textarea class="form-control" name="deskripsi" id="floatingTextarea2" style="height: 100px" >
+                    <?php echo htmlspecialchars($profile->deskripsi); ?></textarea>
                 <label for="floatingTextarea2">Deskripsi</label>
             </div>
             <div class="mb-3">
                 <label for="aktapendiri" class="form-label">Akta Pendiri</label>
-                <input type="text" name="akta_pendiri" class="form-control" id="aktapendiri" value="......" />
+                <input type="text" name="akta_pendiri" class="form-control" id="aktapendiri"
+                value="{{ old('akta_pendiri', $profile->akta_pendiri) }}" />
             </div>
             <div class="mb-3">
                 <label for="alamat" class="form-label">Alamat</label>
-                <input type="text" name="alamat" class="form-control" id="alamat" value="......" />
+                <input type="text" name="alamat" class="form-control" id="alamat" value="{{ old('alamat', $profile->alamat) }}" />
             </div>
             <div class="mb-3">
                 <label for="workshop" class="form-label">Workshop</label>
-                <input type="text" name="workshop" class="form-control" id="workshop" value="......" />
+                <input type="text" name="workshop" class="form-control" id="workshop"
+                value="{{ old('workshop', $profile->workshop) }}" />
             </div>
             <div class="mb-3">
                 <label for="no_hp" class="form-label">No Handphone</label>
-                <input type="number" name="no_hp" class="form-control" id="no_hp" value="......" />
+                <input type="number" name="no_hp" class="form-control" id="no_hp" value="{{ old('no_hp', $profile->no_hp) }}"/>
             </div>
             <div class="mb-3">
                 <label for="web" class="form-label">Web</label>
-                <input type="text" name="web" class="form-control" id="web" value="......" />
+                <input type="text" name="web" class="form-control" id="web" value="{{ old('web', $profile->web) }}" />
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" id="email" value="......" />
+                <input type="email" name="email" class="form-control" id="email" value="{{ old('email', $profile->email) }}" />
             </div>
             <div class="mb-3">
                 <label for="link_map" class="form-label">Link map</label>
-                <input type="text" name="link_map" class="form-control" id="link_map" value="......" />
+                <input type="text" name="link_map" class="form-control" id="link_map"
+                value="{{ old('link_map', $profile->link_map) }}" />
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
