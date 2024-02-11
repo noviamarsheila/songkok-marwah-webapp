@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -14,7 +15,14 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+
+        return view('dashboard.settings.setting', compact('user'));
+    }
+
+    public function changepw()
+    {
+        return view('dashboard.settings.ubahpw');
     }
 
     /**
@@ -69,7 +77,18 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $user = Auth::user();
+
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'username' => 'required|max:255|unique:users,username,' . $user->id,
+            'email' => 'required|email|max:255|unique:users,email,' . $user->id,
+        ]);
+
+        User::where('id', $user->id)
+            ->update($validatedData);
+
+        return redirect('dashboard')->with('success', 'Profile updated successfully');
     }
 
     /**

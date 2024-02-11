@@ -5,7 +5,7 @@
     <h1 class="h2">Setting Account</h1>
 </div>
 <div class="my-4">
-    <a href="./dashboard-settings-account.html" class="text-decoration-none">kembali...</a>
+    <a href="/dashboard/settings" class="text-decoration-none">kembali...</a>
 </div>
 <div class="row">
     <div class="col-lg-5 ps-3 pt-3">

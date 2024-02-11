@@ -85,7 +85,7 @@
 
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/categories*') ? 'active' : '' }}" href="/dashboard/settings">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/settings*') ? 'active' : '' }}" href="/dashboard/settings">
                         <i class="bi bi-person"></i>
                         Settings Account
                     </a>

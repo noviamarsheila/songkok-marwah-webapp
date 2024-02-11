@@ -9,6 +9,7 @@ use App\Http\Controllers\PilihKamiController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SosmedController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\UserController;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Team;
@@ -125,4 +126,10 @@ Route::controller(SosmedController::class)->middleware('auth')->group(function (
 });
 
 // Dashboard Setting
-Route::controller();
+Route::controller(UserController::class)->middleware('auth')->group(function () {
+    // Ubah profile
+    Route::get('/dashboard/settings', 'index')->name('dashboard.setting.index');
+    Route::put('/dashboard/settings', 'update')->name('dashboard.setting.update');
+    // Ubah PW
+    Route::get('/dashboard/changepw', 'changepw')->name('dashboard.setting.changepw');
+});

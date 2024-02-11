@@ -4,7 +4,13 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
     </div>
-    <h6>Wellcome <span class="text-primary">{{ request()->user()->username }}</span>👋👋👋</h6>
+    <h6>Wellcome <span class="text-primary mb-2">{{ request()->user()->username }}</span>👋👋👋</h6>
+    @if (session()->has('success'))
+    <div class="alert alert-success col-lg-8 d-flex justify-content-between" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="row align-items-start">
         <a class="col-lg-3 box--items" href="/dashboard/products">
             <div class="d-flex align-items-center justify-content-between">
