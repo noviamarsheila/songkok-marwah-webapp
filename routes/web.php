@@ -8,6 +8,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PilihKamiController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TeamController;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\Team;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,7 +32,12 @@ Route::delete('/logout', [LoginController::class, 'logout']);
 
 // Dashboard
 Route::get('/dashboard', function () {
-    return view('dashboard.main.index');
+
+    $productCount = Product::count();
+    $categoryCount = Category::count();
+    $teamCount = Team::count();
+
+    return view('dashboard.main.index', compact('productCount', 'categoryCount', 'teamCount'));
 })->middleware('auth');
 
 // Dashboard Produk
