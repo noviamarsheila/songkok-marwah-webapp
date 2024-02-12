@@ -70,7 +70,7 @@ class DatabaseSeeder extends Seeder
             'no_hp' => '08125259979',
             'web' => 'www.songkokmarwah.com',
             'email' => 'info@songkokmarwah.com',
-            'link_map' => 'https://www.google.com/search?kgmid=/g/11vpy0p5qm&hl=en-ID&q=Songkok+MarwaH&kgs=883eaca2e8d35158&shndl=17&shem=losc&source=sh/x/kp/osrp/m5/1'
+            'link_map' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.9367119185617!2d112.42968377483754!3d-7.133317392870664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e77f9bdcd464627%3A0xfa09259cd3253b00!2sSongkok%20MarwaH!5e0!3m2!1sen!2sid!4v1707708026330!5m2!1sen!2sid'
         ]);
 
         // Layanan

@@ -34,6 +34,7 @@ Route::get('/', [ProfileController::class, 'home']);
 Route::get('/about', [ProfileController::class, 'about']);
 Route::get('/layanan', [ProfileController::class, 'service']);
 Route::get('/faq', [ProfileController::class, 'faq']);
+Route::get('/kontak', [ProfileController::class, 'contact']);
 
 
 // Route::get('/visimisi', [VisiMisiController::class, 'index']);

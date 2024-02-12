@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutCompany;
+use App\Models\Faq;
 use App\Models\Layanan;
 use App\Models\PilihKami;
 use App\Models\Product;
@@ -49,6 +51,24 @@ class ProfileController extends Controller
             'sosmeds' => Sosmed::all(),
             'combinedData' => $combinedData,
             'products' => Product::all()
+        ]);
+    }
+
+    public function faq()
+    {
+        return view('profile.faq', [
+            'teams' => Team::all(),
+            'sosmeds' => Sosmed::all(),
+            'faqs' => Faq::all()
+        ]);
+    }
+
+    public function contact()
+    {
+        return view('profile.contact', [
+            'teams' => Team::all(),
+            'sosmeds' => Sosmed::all(),
+            'profilecompany' => AboutCompany::first()
         ]);
     }
 }
