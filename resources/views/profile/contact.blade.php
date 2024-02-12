@@ -17,7 +17,7 @@
 						<div class="headline-paragraph text-black-50">
 							<p>Alamat Kantor: {{ $profilecompany->alamat }}</p>
 							<p>Workshop: {{ $profilecompany->workshop }}</p>
-							<p>No. Telp: <a href="https://wa.me/{{ $no_hp }}" class="text-decoration-none text-black-50" target="_blank">{{ $profilecompany->no_hp }}</a></p>
+							<p>No. Handphone: <a href="https://wa.me/{{ $no_hp }}" class="text-decoration-none text-black-50" target="_blank">{{ $profilecompany->no_hp }}</a></p>
 							<p>Web: <a href="http://{{ $profilecompany->web }}" class="text-decoration-none text-black-50">{{ $profilecompany->web }}</a></p>
 							<p>Email: <a href="mailto:{{ $profilecompany->email }}" class="text-decoration-none text-black-50">{{ $profilecompany->email }}</a></p>
 						</div>
