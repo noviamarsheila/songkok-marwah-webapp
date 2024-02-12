@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Sosmed;
 use App\Models\Team;
+use App\Models\VisiMisi;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -14,6 +15,14 @@ class ProfileController extends Controller
             'teams' => Team::all(),
             'sosmeds' => Sosmed::all()
         ]);
+    }
+
+    public function index()
+    {
+        return [
+            'visi' => VisiMisi::where('tipe', 'visi')->get(),
+            'misi' => VisiMisi::where('tipe', 'misi')->get()
+        ];
     }
 
     public function about()

@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SosmedController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VisiMisiController;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Team;
@@ -31,6 +32,7 @@ use Illuminate\Support\Facades\Route;
 // Company Profile
 Route::get('/', [ProfileController::class, 'home']);
 Route::get('/about', [ProfileController::class, 'about']);
+// Route::get('/visimisi', [VisiMisiController::class, 'index']);
 
 
 // Login
@@ -120,6 +122,17 @@ Route::controller(TeamController::class)->middleware('auth')->group(function () 
     Route::get('/dashboard/team/{team:id}/edit', 'edit')->name('dashboard.team.edit');
     Route::put('/dashboard/team/{team:id}', 'update')->name('dashboard.team.update');
     Route::delete('/dashboard/team/{team:id}', 'destroy')->name('dashboard.team.destroy');
+});
+
+// Dashboard Visi Misi
+Route::controller(VisiMisiController::class)->middleware('auth')->group(function(){
+    Route::get('/dashboard/visi-misi', 'index')->name('dashboard.visimisi.index');
+    Route::get('/dashboard/visi-misi/create', 'create')->name('dashboard.visimisi.create');
+    Route::post('/dashboard/visi-misi', 'store')->name('dashboard.visimisi.store');
+    Route::get('/dashboard/visi-misi/{visi_misi:id}/edit', 'edit')->name('dashboard.visimisi.edit');
+    Route::put('/dashboard/visi-misi/{visi_misi:id}', 'update')->name('dashboard.visimisi.update');
+    Route::delete('/dashboard/visi-misi/{visi_misi:id}', 'destroy')->name('dashboard.visimisi.destroy');
+
 });
 
 // Dashboard Sosmed

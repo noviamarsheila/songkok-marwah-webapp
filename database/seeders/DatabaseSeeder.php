@@ -11,6 +11,7 @@ use App\Models\Product;
 use App\Models\Sosmed;
 use App\Models\Team;
 use App\Models\User;
+use App\Models\VisiMisi;
 use Illuminate\Database\Seeder;
 
 
@@ -184,6 +185,32 @@ class DatabaseSeeder extends Seeder
         Sosmed::create([
             'nama' => 'Facebook',
             'link' => 'https://www.facebook.com/songkokmarwah'
+        ]);
+
+        // Visi Misi
+        VisiMisi::create([
+            'deskripsi' => 'Menggunakan bahan baku yang baik dan bermutu tinggi.',
+            'tipe' => 'visi'
+        ]);
+        VisiMisi::create([
+            'deskripsi' => 'Memberikan peluang kerja bagi masyarakat sekitar sebagai pengerajin songkok serta produk lainnya yang handal dan profesional.',
+            'tipe' => 'visi'
+        ]);
+        VisiMisi::create([
+            'deskripsi' => 'Menarik konsumen dengan produk-produk yang unik berinovasi dengan harga yang sangat terjangkau.',
+            'tipe' => 'visi'
+        ]);
+        VisiMisi::create([
+            'deskripsi' => 'Memberikan pelayanan yang memuaskan kepada pelanggan/konsumen dengan produk berkesinambungan.',
+            'tipe' => 'visi'
+        ]);
+        VisiMisi::create([
+            'deskripsi' => 'Nyaman dan pas saat digunakan, terlihat jelas Marwahnya.',
+            'tipe' => 'visi'
+        ]);
+        VisiMisi::create([
+            'deskripsi' => 'Menghasilkan produk yang berkualitas, dengan harga yang kompetitif,dan selalu berinovatif, serta mampu memberikan pelayanan prima bagi konsumen.',
+            'tipe' => 'misi'
         ]);
     }
 }

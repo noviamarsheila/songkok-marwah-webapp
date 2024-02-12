@@ -74,6 +74,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/visi-misi*') ? 'active' : '' }}" href="/dashboard/visi-misi">
+                        <i class="bi bi-calendar3-range"></i>
+                        Visi Misi
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/sosmed*') ? 'active' : '' }}" href="/dashboard/sosmed">
                         <i class="bi bi-chat-dots"></i>
                         Sosial Media
