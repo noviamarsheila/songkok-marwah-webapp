@@ -12,7 +12,7 @@
         <h4>Ubah Password</h4>
 
         <form method="POST" action="/dashboard/changepw">
-            @method('PUT')
+            {{-- @method('PUT') --}}
             @csrf
             <div class="mb-3">
                 <label for="password_lama" class="form-label">Password Lama</label>

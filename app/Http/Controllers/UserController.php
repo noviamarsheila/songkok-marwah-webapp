@@ -92,28 +92,35 @@ class UserController extends Controller
         return redirect('dashboard')->with('success', 'Profile updated successfully');
     }
 
-    public function updatepw(Request $request, User $user)
+    public function updatepw(Request $request)
     {
+
         // Validate the form data
         $validatedData = $request->validate([
             'password_lama' => 'required',
-            'password_baru' => 'required|string|min:8|confirmed',
+            'password_baru' => 'required|string|min:8',
+            'password_baru_confirmation' => 'required|string|min:8',
         ]);
 
         // Get the current user
         $user = Auth::user();
 
         // Verify the current password
-        if (!Hash::check($request->password_lama, $user->password)) {
+        if (!password_verify($request->password_lama, $user->password)) {
             return redirect()->back()->withErrors(['password_lama' => 'Password lama tidak sesuai']);
+        }
+        if ($validatedData['password_baru'] != $validatedData['password_baru_confirmation']) {
+            return redirect()->back()->withErrors(['password_baru_confirmation' => 'Password harus sama dengan password baru']);
         }
 
         // Update the user's password
-        $user->password = Hash::make($request->password_baru);
+        $password_baru = bcrypt($validatedData['password_baru_confirmation']);
 
 
         User::where('id', $user->id)
-            ->update($validatedData);
+            ->update([
+                'password' => $password_baru
+            ]);
 
         // Redirect back with success message
         return redirect('dashboard')->with('success', 'Password berhasil diubah');

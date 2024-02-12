@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Login
-Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 // Logout
 Route::delete('/logout', [LoginController::class, 'logout']);
@@ -132,5 +132,5 @@ Route::controller(UserController::class)->middleware('auth')->group(function () 
     Route::put('/dashboard/settings', 'update')->name('dashboard.setting.update');
     // Ubah PW
     Route::get('/dashboard/changepw', 'changepw')->name('dashboard.setting.changepw');
-    Route::put('/dashboard/changepw', 'updatepw')->name('dashboard.setting.updatepw');
+    Route::post('/dashboard/changepw', 'updatepw')->name('dashboard.setting.updatepw');
 });
