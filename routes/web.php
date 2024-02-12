@@ -32,6 +32,10 @@ use Illuminate\Support\Facades\Route;
 // Company Profile
 Route::get('/', [ProfileController::class, 'home']);
 Route::get('/about', [ProfileController::class, 'about']);
+Route::get('/layanan', [ProfileController::class, 'service']);
+Route::get('/faq', [ProfileController::class, 'faq']);
+
+
 // Route::get('/visimisi', [VisiMisiController::class, 'index']);
 
 
@@ -125,14 +129,13 @@ Route::controller(TeamController::class)->middleware('auth')->group(function () 
 });
 
 // Dashboard Visi Misi
-Route::controller(VisiMisiController::class)->middleware('auth')->group(function(){
+Route::controller(VisiMisiController::class)->middleware('auth')->group(function () {
     Route::get('/dashboard/visi-misi', 'index')->name('dashboard.visimisi.index');
     Route::get('/dashboard/visi-misi/create', 'create')->name('dashboard.visimisi.create');
     Route::post('/dashboard/visi-misi', 'store')->name('dashboard.visimisi.store');
     Route::get('/dashboard/visi-misi/{visi_misi:id}/edit', 'edit')->name('dashboard.visimisi.edit');
     Route::put('/dashboard/visi-misi/{visi_misi:id}', 'update')->name('dashboard.visimisi.update');
     Route::delete('/dashboard/visi-misi/{visi_misi:id}', 'destroy')->name('dashboard.visimisi.destroy');
-
 });
 
 // Dashboard Sosmed
