@@ -82,7 +82,7 @@ class AboutCompanyController extends Controller
             'no_hp' => 'required|max:14',
             'web' => 'required|max:255',
             'email' => 'required|max:255',
-            'link_map' => 'required|max:255',
+            'link_map' => 'required',
             'akta_pendiri' => 'nullable'
         ];
 

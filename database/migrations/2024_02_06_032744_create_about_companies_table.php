@@ -23,7 +23,7 @@ class CreateAboutCompaniesTable extends Migration
             $table->string('no_hp');
             $table->string('web');
             $table->string('email');
-            $table->string('link_map');
+            $table->text('link_map');
             $table->timestamps();
         });
     }

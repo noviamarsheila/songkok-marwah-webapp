@@ -69,7 +69,7 @@
                     <h6>Web:</h6>
                     <p id="showWeb"></p>
                     <h6>Link Map:</h6>
-                    <p id="linkMap"></p>
+                    <p id="linkMap" class="overflow-scroll"></p>
                 </div>
             </div>
             <div class="modal-footer">

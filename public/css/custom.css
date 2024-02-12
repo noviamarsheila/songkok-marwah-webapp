@@ -1,0 +1,177 @@
+/* Variabel */
+:root {
+	--amber-700: rgb(217 119 6);
+	--amber-600: rgb(245 158 11);
+	--lime-700: rgb(77 124 15);
+	--lime-500: rgb(132 204 22);
+	--bg-section: #e5faff;
+}
+html,
+body {
+	scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* BERANDA */
+/* Navbar */
+.navbar {
+	background-color: rgb(2 6 23);
+}
+a.nav-link {
+	font-size: 18px;
+	font-weight: 600;
+	color: var(--amber-700) !important;
+}
+a.nav-link:hover {
+	color: var(--amber-600) !important;
+	text-decoration: underline;
+}
+/* Carousel */
+.carousel-inner {
+	max-height: 85vh;
+}
+/* Desc Profile */
+.headline-slogan {
+	color: var(--lime-700);
+	font-size: 3.7rem;
+	font-weight: 800;
+}
+.headline-paragraph {
+	font-size: 1.2rem;
+}
+a.read-more:hover {
+	border-color: var(--lime-700) !important;
+}
+/* THIRD SECTION */
+.title-section {
+	color: var(--lime-500);
+	font-size: 2.8rem;
+	font-weight: 700;
+}
+/* FOURTH */
+.--section-page {
+	margin: 8rem 0 5rem 0;
+	background-color: var(--bg-section);
+}
+.--box-4 {
+	max-width: 200px;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 25px;
+	border-radius: 10px;
+}
+.--box-4 h4 {
+	color: var(--lime-700);
+	font-weight: 700;
+}
+/* KEUNGGULAN KAMI */
+.--box-advantage {
+	max-width: 400px;
+	height: 200px;
+	border-radius: 20px;
+	margin: 10px 30px;
+}
+.--box-advantage h4 {
+	margin-left: 10px;
+	color: var(--amber-700);
+	font-size: 1.6rem;
+	font-weight: 700;
+}
+
+/* TENTANG KAMI ------------------------ 2*/
+.visimisi {
+	margin-top: 4rem !important;
+}
+#whychooseus {
+	margin: 8rem 0 5rem 0;
+}
+.--box-whychooseus {
+	background-color: var(--bg-section);
+	padding: 15px;
+	max-width: 100%;
+	height: 100px;
+}
+
+/* LAYANAN KAMI ------------------------ 3*/
+.--box-layanan {
+	cursor: pointer;
+	max-width: 100%;
+	padding: 15px;
+	border-radius: 10px;
+}
+.--box-layanan h3 {
+	font-size: 23px;
+}
+#menu--layanan {
+	margin-bottom: 8rem;
+}
+.products {
+	margin-bottom: 7rem;
+}
+.--box-produk img {
+	width: 220px;
+	height: 150px;
+}
+.--pelanggan-section {
+	background-color: var(--bg-section) !important;
+	margin-bottom: 8rem;
+}
+
+/* KONTAK KAMI SECTION---------------4 */
+.--kontak-section {
+	margin: 3rem 0 8rem 0;
+}
+.form-label {
+	color: var(--lime-700);
+	font-weight: 600;
+}
+.btn-kontak {
+	background-color: var(--lime-700);
+	padding: 7px 45px;
+	color: white;
+}
+.btn-kontak:hover {
+	background-color: var(--lime-500);
+	color: white;
+	font-weight: 500;
+}
+
+/* Footer */
+.link--footer:hover {
+	text-decoration: underline !important;
+}
+
+/* Media Query untuk layar besar */
+@media (min-width: 992px) {
+	/* KEUNGGULAN KAMI - beranda */
+	.--box-advantage {
+		margin: 10px auto;
+	}
+}
+
+/* layar 0-768 (mobile) */
+@media screen and (max-width: 768px) {
+	/* BERANDA */
+	.headline-slogan {
+		font-size: 2.5rem;
+	}
+	.title-section {
+		font-size: 2.4rem;
+	}
+
+	/* TENTANG KAMI */
+	#whychooseus {
+		margin: 2rem 0 3rem 0;
+	}
+
+	/* LAYANAN KAMI */
+	.--box-layanan img {
+		width: 90px;
+	}
+	.--pelanggan-section {
+		margin-bottom: 3rem;
+	}
+}

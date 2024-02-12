@@ -7,6 +7,7 @@ use App\Http\Controllers\LayananController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PilihKamiController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SosmedController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
@@ -25,6 +26,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+// Company Profile
+Route::get('/', [ProfileController::class, 'home']);
+Route::get('/about', [ProfileController::class, 'about']);
+
 
 // Login
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');

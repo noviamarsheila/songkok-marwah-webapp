@@ -5,7 +5,7 @@
         <form action="/login" method="POST">
             @csrf
             <div class="d-flex align-items-end mb-2">
-                <img src="img/logo.png" alt="logo" width="50" />
+                <img src="images/logo.png" alt="logo" width="50" />
                 <h1 class="h3 ms-2 fw-bold fs-3">Login</h1>
             </div>
             @if(session()->has('loginError'))
