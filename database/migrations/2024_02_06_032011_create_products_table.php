@@ -22,6 +22,8 @@ class CreateProductsTable extends Migration
             $table->foreignId('category_id');
             $table->timestamp('publish_at')->nullable();
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

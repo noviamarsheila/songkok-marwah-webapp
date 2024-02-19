@@ -13,10 +13,10 @@
 					<img src="images/beranda/image1.png" class="d-block w-100" alt="..." />
 				</div>
 				<div class="carousel-item">
-					<img src="images/beranda/tiga.png" class="d-block w-100" alt="..." />
+					<img src="images/beranda/image-pelanggan.png" class="d-block w-100" alt="..." />
 				</div>
 				<div class="carousel-item">
-					<img src="images/beranda/image1.png" class="d-block w-100" alt="..." />
+					<img src="images/beranda/image2.png" class="d-block w-100" alt="..." />
 				</div>
 			</div>
 			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
