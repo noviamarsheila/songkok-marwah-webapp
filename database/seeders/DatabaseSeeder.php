@@ -47,8 +47,8 @@ class DatabaseSeeder extends Seeder
         Product::create([
             'name' => 'Songkok Marwah NU',
             'deskripsi' => 'Songkok adalah sebuah penutup kepala tradisional yang sering dikenakan oleh pria muslim di berbagai negara di Asia Tenggara, khususnya di Indonesia, Malaysia, dan Brunei. Songkok memiliki bentuk yang menyerupai topi dengan ciri khas berbentuk setengah bulan, biasanya terbuat dari bahan seperti kulit, kain, atau serat alami lainnya. Songkok sering kali dipakai sebagai bagian dari pakaian resmi dalam berbagai kesempatan, termasuk acara keagamaan, pernikahan, dan upacara adat, serta sebagai bagian dari pakaian sehari-hari dalam beberapa budaya. Selain menjadi simbol identitas keagamaan dan kebangsaan, songkok juga memiliki nilai historis dan budaya yang dalam di masyarakat setempat.',
-            'slug' => 'songkok-marwah-nu',
-            'image' => 'songkok-uye.png',
+            'slug' => 'songkok-marwah-1',
+            'image' => 'songkok-marwah-1.png',
             'category_id' => '1'
         ]);
 
@@ -56,10 +56,51 @@ class DatabaseSeeder extends Seeder
             'name' => 'Songkok Marwah Premium',
             'deskripsi' => 'Songkok juga memiliki makna simbolis yang mendalam dalam budaya Islam. Penggunaannya sering kali dianggap sebagai bentuk penghormatan terhadap agama dan tradisi Islam. Selain itu, songkok juga dipercaya memiliki nilai spiritual dan perlindungan bagi pemakainya. Di beberapa masyarakat, pemakaian songkok juga menjadi tanda kedewasaan atau kematangan dalam beragama dan sosial. Dengan nilai-nilai simbolisnya yang kuat dan berbagai makna historis dan budaya yang terkait dengannya, songkok tetap menjadi salah satu item penting dalam warisan budaya dan tradisi masyarakat Muslim di Asia Tenggara.
             ',
-            'slug' => 'songkok-marwah-premium',
-            'image' => 'songkok-marwah-premium.png',
+            'slug' => 'songkok-marwah-2',
+            'image' => 'songkok-marwah-2.png',
             'category_id' => '1'
         ]);
+        Product::create([
+            'name' => 'Songkok Marwah Premium',
+            'deskripsi' => 'Songkok juga memiliki makna simbolis yang mendalam dalam budaya Islam. Penggunaannya sering kali dianggap sebagai bentuk penghormatan terhadap agama dan tradisi Islam. Selain itu, songkok juga dipercaya memiliki nilai spiritual dan perlindungan bagi pemakainya. Di beberapa masyarakat, pemakaian songkok juga menjadi tanda kedewasaan atau kematangan dalam beragama dan sosial. Dengan nilai-nilai simbolisnya yang kuat dan berbagai makna historis dan budaya yang terkait dengannya, songkok tetap menjadi salah satu item penting dalam warisan budaya dan tradisi masyarakat Muslim di Asia Tenggara.
+            ',
+            'slug' => 'songkok-marwah-3',
+            'image' => 'songkok-marwah-3.png',
+            'category_id' => '1'
+        ]);
+        Product::create([
+            'name' => 'Songkok Marwah Premium',
+            'deskripsi' => 'Songkok juga memiliki makna simbolis yang mendalam dalam budaya Islam. Penggunaannya sering kali dianggap sebagai bentuk penghormatan terhadap agama dan tradisi Islam. Selain itu, songkok juga dipercaya memiliki nilai spiritual dan perlindungan bagi pemakainya. Di beberapa masyarakat, pemakaian songkok juga menjadi tanda kedewasaan atau kematangan dalam beragama dan sosial. Dengan nilai-nilai simbolisnya yang kuat dan berbagai makna historis dan budaya yang terkait dengannya, songkok tetap menjadi salah satu item penting dalam warisan budaya dan tradisi masyarakat Muslim di Asia Tenggara.
+            ',
+            'slug' => 'songkok-marwah-4',
+            'image' => 'songkok-marwah-4.png',
+            'category_id' => '1'
+        ]);
+        Product::create([
+            'name' => 'Songkok Marwah Premium',
+            'deskripsi' => 'Songkok juga memiliki makna simbolis yang mendalam dalam budaya Islam. Penggunaannya sering kali dianggap sebagai bentuk penghormatan terhadap agama dan tradisi Islam. Selain itu, songkok juga dipercaya memiliki nilai spiritual dan perlindungan bagi pemakainya. Di beberapa masyarakat, pemakaian songkok juga menjadi tanda kedewasaan atau kematangan dalam beragama dan sosial. Dengan nilai-nilai simbolisnya yang kuat dan berbagai makna historis dan budaya yang terkait dengannya, songkok tetap menjadi salah satu item penting dalam warisan budaya dan tradisi masyarakat Muslim di Asia Tenggara.
+            ',
+            'slug' => 'songkok-marwah-5',
+            'image' => 'songkok-marwah-5.png',
+            'category_id' => '1'
+        ]);
+        Product::create([
+            'name' => 'Songkok Marwah Premium',
+            'deskripsi' => 'Songkok juga memiliki makna simbolis yang mendalam dalam budaya Islam. Penggunaannya sering kali dianggap sebagai bentuk penghormatan terhadap agama dan tradisi Islam. Selain itu, songkok juga dipercaya memiliki nilai spiritual dan perlindungan bagi pemakainya. Di beberapa masyarakat, pemakaian songkok juga menjadi tanda kedewasaan atau kematangan dalam beragama dan sosial. Dengan nilai-nilai simbolisnya yang kuat dan berbagai makna historis dan budaya yang terkait dengannya, songkok tetap menjadi salah satu item penting dalam warisan budaya dan tradisi masyarakat Muslim di Asia Tenggara.
+            ',
+            'slug' => 'songkok-marwah-6',
+            'image' => 'songkok-marwah-6.png',
+            'category_id' => '1'
+        ]);
+        Product::create([
+            'name' => 'Songkok Marwah Premium',
+            'deskripsi' => 'Songkok juga memiliki makna simbolis yang mendalam dalam budaya Islam. Penggunaannya sering kali dianggap sebagai bentuk penghormatan terhadap agama dan tradisi Islam. Selain itu, songkok juga dipercaya memiliki nilai spiritual dan perlindungan bagi pemakainya. Di beberapa masyarakat, pemakaian songkok juga menjadi tanda kedewasaan atau kematangan dalam beragama dan sosial. Dengan nilai-nilai simbolisnya yang kuat dan berbagai makna historis dan budaya yang terkait dengannya, songkok tetap menjadi salah satu item penting dalam warisan budaya dan tradisi masyarakat Muslim di Asia Tenggara.
+            ',
+            'slug' => 'songkok-marwah-7',
+            'image' => 'songkok-marwah-7.png',
+            'category_id' => '1'
+        ]);
+
 
         // About
         AboutCompany::create([
@@ -67,6 +108,8 @@ class DatabaseSeeder extends Seeder
             'deskripsi' => 'PT. INTI MARWAH INDUSTRI adalah perusahaan UMKM yang bergerak di bidang industri Songkok dengan merk terdaftar Marwah',
             'alamat' => 'Jl. Merpati No. 87 Kabupaten Lamongan',
             'workshop' => 'Perum Graha Indah ruko b7 Tambakboyo lamongan',
+            'nama_brand' => 'Songkok Marwah',
+            'logo' => 'logo.png',
             'no_hp' => '08125259979',
             'web' => 'www.songkokmarwah.com',
             'email' => 'info@songkokmarwah.com',
@@ -76,31 +119,37 @@ class DatabaseSeeder extends Seeder
         // Layanan
         Layanan::create([
             'name' => 'Creative Idea',
+            'image' => 'creative-idea.png',
             'deskripsi' => 'Guna memperkaya produk, kami selalu mencoba ide baru yang kreatif dan selalu tetap mengedepankan permintaan pasar yang semakin kompetitif.'
         ]);
 
         Layanan::create([
             'name' => 'Online Solutions',
+            'image' => 'online-solutions.png',
             'deskripsi' => 'Kemudahan pelayanan bagi pelanggan, melalui fasilitas online dan informasi produk produk terbaru melalui media website.'
         ]);
 
         Layanan::create([
             'name' => 'Data',
+            'image' => 'data-icon.png',
             'deskripsi' => 'Komputerisasi data terkait stok dan transaksi, tercatat secara langsung, akun tabel serta data yang lebih baik dan akurat.'
         ]);
 
         Layanan::create([
             'name' => 'Networking Solutions',
+            'image' => 'networking-solutions.png',
             'deskripsi' => 'Membangun sistem pemasaran yang tidak tumpang tindih melalui mekanisme jaringan perwakilan wilayah guna membangun kompetisi bisnis yang sehat.'
         ]);
 
         Layanan::create([
             'name' => 'Payment',
+            'image' => 'payment-icon.png',
             'deskripsi' => 'Memberikan kemudahan dalam sistem pembayaran, tunai dan tempo melalui tahap kemitraan.'
         ]);
 
         Layanan::create([
             'name' => 'After Sales',
+            'image' => 'after-sales.png',
             'deskripsi' => 'Membangun komunikasi yang kuat antara manajemen dan mitra atau pelanggan untuk kemajuan bersama.'
         ]);
 

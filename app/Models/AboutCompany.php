@@ -10,5 +10,5 @@ class AboutCompany extends Model
     use HasFactory;
     protected $table = 'about_company';
 
-    protected $fillable = ['name', 'deskripsi', 'akta_pendiri', 'alamat', 'workshop', 'no_hp', 'web', 'email', 'link_map'];
+    protected $fillable = ['name', 'deskripsi', 'nama_brand', 'logo', 'akta_pendiri', 'alamat', 'workshop', 'no_hp', 'web', 'email', 'link_map'];
 }

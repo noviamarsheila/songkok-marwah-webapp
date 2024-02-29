@@ -25,6 +25,9 @@ a.nav-link {
 }
 a.nav-link:hover {
     color: var(--amber-600) !important;
+}
+.active {
+    color: var(--lime-500) !important;
     text-decoration: underline;
 }
 

@@ -4,14 +4,14 @@
         <div class="row d-flex flex-lg-row flex-column-reverse">
             <div class="col-lg-5 col-12 mt-lg-0 mt-4">
                 <div class="d-flex">
-                    <img src="images/logo.png" alt="logo" width="40" height="40" />
-                    <h3 class="mt-2 ms-1">Songkok Marwah</h3>
+                    <img src="/images/logo/{{ $profile->logo }}" alt="logo" width="40" height="40" />
+                    <h3 class="mt-2 ms-1">{{ $profile->nama_brand }}</h3>
                 </div>
                 <div>
                     <span class="text-black-50 pt-2 pb-xxl-4"
                         >©
                         <span id="currentYear"></span>
-                        <a href="https://songkokmarwah.com/" class="text-decoration-none text-black-50">PT INTI MARWAH INDUSTRI™</a><br />
+                        <a href="https://songkokmarwah.com/" class="text-decoration-none text-black-50">{{ $profile->name }}™</a><br />
                         All Rights Reserved.
                     </span>
                 </div>

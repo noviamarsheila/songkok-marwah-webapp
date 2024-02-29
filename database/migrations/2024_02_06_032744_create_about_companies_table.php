@@ -17,6 +17,8 @@ class CreateAboutCompaniesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('deskripsi');
+            $table->string('nama_brand');
+            $table->string('logo');
             $table->string('akta_pendiri')->nullable();
             $table->string('alamat');
             $table->string('workshop');

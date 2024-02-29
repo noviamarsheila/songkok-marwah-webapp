@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutCompany;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+
 
 class AboutCompanyController extends Controller
 {
@@ -82,11 +84,33 @@ class AboutCompanyController extends Controller
             'no_hp' => 'required|max:14',
             'web' => 'required|max:255',
             'email' => 'required|max:255',
+            'nama_brand' => 'required|max:255',
             'link_map' => 'required',
             'akta_pendiri' => 'nullable'
         ];
 
+        if ($request->logo) {
+            $rules['logo'] = 'image|file|max:2024';
+        }
+
         $validatedData = $request->validate($rules);
+
+        // jika image diperbarui
+        if ($request->logo) {
+            // hapus oldImage jika ada
+            $filePath = public_path('/images/products/' . $aboutCompany->image);
+            if (File::exists($filePath)) {
+                // hapus file tsb
+                File::delete($filePath);
+            }
+            // ubah nama gambar, menjadi slug + . + ekstensi: songkok-mewah.png
+            $imageName = 'logo' . '.' . $request->logo->getClientOriginalExtension();
+            // untuk menyimpan nama image kedatabase
+            $validatedData['logo'] = $imageName;
+            // move image ke folder 'public/images/product'
+            $request->file('logo')->move(public_path('images/logo'), $imageName);
+        }
+
 
         $aboutCompany->update($validatedData);
 

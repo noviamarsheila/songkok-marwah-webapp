@@ -17,6 +17,7 @@ class CreateLayanansTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('deskripsi');
+            $table->string('image');
             $table->timestamps();
         });
     }

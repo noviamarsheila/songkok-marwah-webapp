@@ -49,11 +49,16 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title fw-bold text-primary" id="showName">Nama Perusahaan</h5>
+                <div class="me-3">
+                    <img src="" alt="" id="showImage" class="img-fluid" style="max-width: 70px">
+                </div>
+                <h5 class="modal-title fw-bold text-success" id="showName">Nama Perusahaan</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div>
+                    <h6>Nama brand:</h6>
+                    <p id="showBrand"></p>
                     <h6>Deskripsi:</h6>
                     <p id="showDeskripsi"></p>
                     <h6>Akta Pendiri:</h6>
@@ -89,6 +94,9 @@
         const showWeb = document.getElementById('showWeb');
         const showEmail = document.getElementById('showEmail');
         const showLinkMap = document.getElementById('linkMap');
+        const showImage = document.getElementById('showImage');
+        const showBrand = document.getElementById('showBrand');
+
         const showAktaPendiri = document.getElementById('showAkta');
 
         showName.textContent = profile.name;
@@ -99,6 +107,8 @@
         showWeb.innerHTML =profile.web;
         showEmail.innerHTML = profile.email;
         showLinkMap.innerHTML = profile.link_map;
+        showBrand.innerHTML = profile.nama_brand;
+        showImage.src = `{{ asset('images/logo/${profile.logo}') }}`;
         showAktaPendiri.innerHTML = profile.akta_pendiri ;
     }
 </script>

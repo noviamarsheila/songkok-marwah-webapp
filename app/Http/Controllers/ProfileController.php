@@ -18,7 +18,8 @@ class ProfileController extends Controller
     {
         return view('profile.home', [
             'teams' => Team::all(),
-            'sosmeds' => Sosmed::all()
+            'sosmeds' => Sosmed::all(),
+            'profile' => AboutCompany::first()
         ]);
     }
 
@@ -29,28 +30,23 @@ class ProfileController extends Controller
             'sosmeds' => Sosmed::all(),
             'visi' => VisiMisi::where('tipe', 'visi')->get(),
             'misi' => VisiMisi::where('tipe', 'misi')->get(),
-            'pilihkami' => PilihKami::all()
+            'pilihkami' => PilihKami::all(),
+            'profile' => AboutCompany::first()
+
         ]);
     }
 
     public function service()
     {
         $services = Layanan::take(6)->get();
-        $imageNames = ['creative-idea.png', 'online-solutions.png', 'data-icon.png', 'networking-solutions.png', 'payment-icon.png', 'after-sales.png'];
-
-        $combinedData = [];
-        foreach ($services as $key => $service) {
-            $combinedData[] = [
-                'service' => $service,
-                'imageUrl' => asset('images/layanan/' . $imageNames[$key])
-            ];
-        }
 
         return view('profile.services', [
             'teams' => Team::all(),
             'sosmeds' => Sosmed::all(),
-            'combinedData' => $combinedData,
-            'products' => Product::all()
+            'layanan' => $services,
+            'products' => Product::all(),
+            'profile' => AboutCompany::first()
+
         ]);
     }
 
@@ -59,7 +55,9 @@ class ProfileController extends Controller
         return view('profile.faq', [
             'teams' => Team::all(),
             'sosmeds' => Sosmed::all(),
-            'faqs' => Faq::all()
+            'faqs' => Faq::all(),
+            'profile' => AboutCompany::first()
+
         ]);
     }
 
@@ -68,7 +66,9 @@ class ProfileController extends Controller
         return view('profile.contact', [
             'teams' => Team::all(),
             'sosmeds' => Sosmed::all(),
-            'profilecompany' => AboutCompany::first()
+            'profilecompany' => AboutCompany::first(),
+            'profile' => AboutCompany::first()
+
         ]);
     }
 }

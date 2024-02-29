@@ -11,13 +11,13 @@
 				<!-- baris kedua -->
 				<div class="row mt-5 mb-5 gap-3 gap-lg-0 gy-0 gy-lg-4">
 					<!-- kotak 1 -->
-                    @foreach ($combinedData as $data)
+                    @foreach ($layanan as $data)
                         <div class="col-lg-6">
                             <div class="--box-layanan shadow-sm border border-primary d-flex justify-content-between align-items-center">
-                                <img src="{{ $data['imageUrl'] }}" alt="" width="130" />
+                                <img src="/images/layanan/{{ $data->image }}" alt="" width="130" />
                                 <div class="ms-3">
-                                    <h3>{{ $data['service']->name }}</h3>
-                                    <p class="headline-paragraph text-black-50">{{ $data['service']->deskripsi }}</p>
+                                    <h3>{{ $data->name }}</h3>
+                                    <p class="headline-paragraph text-black-50">{{ $data->deskripsi }}</p>
                                 </div>
                             </div>
                         </div>

@@ -19,11 +19,9 @@ class CreateProductsTable extends Migration
             $table->text('deskripsi');
             $table->string('slug')->unique();
             $table->string('image')->nullable();
-            $table->foreignId('category_id');
+            $table->integer('category_id');
             $table->timestamp('publish_at')->nullable();
             $table->timestamps();
-
-            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

@@ -17,6 +17,7 @@
             <thead>
                 <tr>
                     <th scope="col">No</th>
+                    <th scope="col">Image</th>
                     <th scope="col">Nama Layanan</th>
                     <th scope="col">Deskripsi</th>
                     <th scope="col">Action</th>
@@ -26,6 +27,9 @@
                 @foreach ($services as $service)
                 <tr>
                     <th scope="row">{{ $loop->iteration }}</th>
+                    <td>
+                        <img src="/images/layanan/{{ $service->image }}" alt="" width="100">
+                    </td>
                     <td>{{ $service->name }}</td>
                     <td>{{ $service->deskripsi }}</td>
                     <td>
