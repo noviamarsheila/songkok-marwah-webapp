@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="Hugo 0.118.2" />
+    <link rel="icon" type="image/x-icon" href="/images/logo/{{ $profile->logo }}">
     <title>{{ $title }}</title>
     <!-- CSS -->
     <link rel="stylesheet" href="/css/login.css" />
