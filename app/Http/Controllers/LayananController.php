@@ -99,10 +99,10 @@ class LayananController extends Controller
         ]);
 
         if ($request->image) {
-            $rules['image'] = 'image|file|max:2024';
+            $validatedData['image'] = 'image|file|max:2024';
         }
 
-        $validatedData = $request->validate($rules);
+        $validatedData = $request->validate($validatedData);
 
         // jika image diperbarui
         if ($request->image) {
