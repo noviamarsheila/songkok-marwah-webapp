@@ -38,7 +38,7 @@ class ProfileController extends Controller
 
     public function service()
     {
-        $services = Layanan::take(6)->get();
+        $services = Layanan::all();
 
         return view('profile.services', [
             'teams' => Team::all(),

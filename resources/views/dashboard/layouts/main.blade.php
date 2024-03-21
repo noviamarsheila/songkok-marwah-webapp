@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content="Hugo 0.118.2" />
     <title>Dashboard</title>
+    <link rel="shortcut icon" href="{{ asset('images/logo/logo.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}" />
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}" />

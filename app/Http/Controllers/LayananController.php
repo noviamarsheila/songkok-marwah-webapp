@@ -93,16 +93,16 @@ class LayananController extends Controller
      */
     public function update(Request $request, Layanan $layanan)
     {
-        $validatedData = $request->validate([
+        $rules = [
             'name' => 'required|max:255',
             'deskripsi' => 'required'
-        ]);
+        ];
 
         if ($request->image) {
-            $validatedData['image'] = 'image|file|max:2024';
+            $rules['image'] = 'image|file|max:2024';
         }
 
-        $validatedData = $request->validate($validatedData);
+        $validatedData = $request->validate($rules);
 
         // jika image diperbarui
         if ($request->image) {
